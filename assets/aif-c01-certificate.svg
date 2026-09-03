@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
+  <title id="title">AWS AI Practitioner AIF-C01 Exam Coach</title>
+  <desc id="desc">Certificate-style banner for the DataTweets AWS AI Practitioner Exam Coach.</desc>
+  <rect width="920" height="300" rx="28" fill="#0f172a"/>
+  <rect x="18" y="18" width="884" height="264" rx="20" fill="none" stroke="#f59e0b" stroke-width="3"/>
+  <circle cx="150" cy="150" r="88" fill="#f59e0b"/>
+  <circle cx="150" cy="150" r="68" fill="#fff7ed"/>
+  <path d="M150 93l17 35 39 6-28 27 7 39-35-18-35 18 7-39-28-27 39-6 17-35z" fill="#f59e0b"/>
+  <path d="M122 213l-16 57 38-20 25 29 11-66" fill="#fb923c"/>
+  <path d="M178 213l16 57-38-20-25 29-11-66" fill="#f97316" opacity=".88"/>
+  <text x="275" y="88" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">AWS CERTIFIED AI PRACTITIONER</text>
+  <text x="275" y="145" fill="#f59e0b" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">AIF-C01 EXAM COACH</text>
+  <text x="275" y="190" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="22">Practice • Understand • Improve • Pass with confidence</text>
+  <rect x="275" y="220" width="300" height="38" rx="19" fill="#1e293b" stroke="#475569"/>
+  <text x="425" y="246" text-anchor="middle" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">by DataTweets.com</text>
+</svg>
