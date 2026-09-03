@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://datatweets.com/">DataTweets.com</a> ·
+  <a href="https://datatweets.com/">datatweets.com</a> ·
   <a href="#-start-here--3-simple-steps">Start Here</a> ·
   <a href="#-use-it-with-claude-pro">Claude Pro</a> ·
   <a href="#-use-it-with-chatgpt-plus">ChatGPT Plus</a> ·
@@ -61,7 +61,7 @@ This project is designed for:
 
 ---
 
-# 🚀 Start Here — 3 Simple Steps
+# Start Here — 3 Simple Steps
 
 <table>
 <tr>
@@ -75,7 +75,7 @@ If you only want to start studying, you can ignore `scripts/`, `requirements-dev
 
 ---
 
-# 📄 Download the 3 Practice Exams
+# Download the 3 Practice Exams
 
 Each practice exam contains **65 questions** and is designed for a **90-minute** practice session.
 
@@ -91,7 +91,7 @@ Together, the three files provide **195 AWS AI Practitioner practice questions**
 
 ---
 
-# 🟣 Use It with Claude Pro
+# Use It with Claude Pro
 
 Claude supports custom Skills, so this is the easiest setup.
 
@@ -151,7 +151,7 @@ For more prompts, see [Practice ideas](#-practice-ideas-for-students).
 
 ---
 
-# 🟢 Use It with ChatGPT Plus
+# Use It with ChatGPT Plus
 
 For personal ChatGPT Plus accounts, use a **Project**. Projects keep your instructions, files, and study chats together.
 
@@ -215,7 +215,7 @@ Do not reveal an answer before I respond.
 
 ---
 
-# 🧠 How the Exam Coach Helps You Learn
+# How the Exam Coach Helps You Learn
 
 The coach uses a taxonomy and relationship graph so it can recognize what a question is **really testing**.
 
@@ -293,7 +293,7 @@ Track which questions I get wrong.
 
 ---
 
-# 📚 AIF-C01 Topics Covered
+# AIF-C01 Topics Covered
 
 The coach follows the current AWS Certified AI Practitioner blueprint and covers the five major areas:
 
@@ -319,7 +319,7 @@ Important concepts include:
 
 ---
 
-# ❓ Beginner FAQ
+# Beginner FAQ
 
 ### Do I need Python?
 
@@ -355,7 +355,7 @@ No. This is an independent educational project for AWS AI Practitioner exam prep
 
 ---
 
-# 🌐 Learn More with DataTweets
+# Learn More with DataTweets
 
 This project is created as part of the learning resources from **[DataTweets.com](https://datatweets.com/)**.
 
@@ -369,7 +369,7 @@ Visit DataTweets for practical tutorials, courses, and learning material across:
 - Analytics
 - SQL, Python, dbt, Terraform, and modern data tools
 
-👉 **[Visit DataTweets.com](https://datatweets.com/)**
+ **[Visit DATATWEETS](https://datatweets.com/)**
 
 ---
 
@@ -381,7 +381,7 @@ This repository is designed to help learners looking for:
 
 ---
 
-# 🛠️ For Maintainers and Contributors Only
+# For Maintainers and Contributors Only
 
 > Students can stop reading here. Everything below is optional developer tooling.
 
