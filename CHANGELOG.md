@@ -1,9 +1,21 @@
 # Changelog
 
+## 1.1.0 - 2026-09-03
+
+### Student experience redesign
+- Rewrote README as a beginner-first AWS AI Practitioner landing page.
+- Added custom certificate-style and step-by-step SVG graphics.
+- Added SEO-focused AIF-C01 headings, descriptions, FAQ, and search terms.
+- Added DataTweets.com branding and links.
+- Moved Python commands to a clearly marked maintainer-only section.
+- Simplified Claude Pro and ChatGPT Plus setup for non-technical learners.
+- Added a ready-to-upload Claude Skill ZIP under `downloads/`.
+- Added all three 65-question practice exam PDFs under `practice-exams/` for direct student access.
+
 ## 1.0.3 - 2026-09-03
 
 - Split the taxonomy into five domain files with a small top-level manifest for progressive loading.
-- Kept source-practice PDFs private: the public package contains aggregate corpus analysis but no per-question answer mappings.
+- Kept source-practice PDFs private in this version: the public package contained aggregate corpus analysis but no per-question answer mappings.
 - Updated Skill, ChatGPT Project instructions, README, packaging, and validation for the progressive-disclosure layout.
 
 ## 1.0.2 - 2026-09-03
