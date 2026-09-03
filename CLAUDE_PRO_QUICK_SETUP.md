@@ -1,10 +1,48 @@
-# Claude Pro Quick Setup
+# Claude Pro Setup — AWS AI Practitioner Coach
 
-1. Settings -> Capabilities -> enable **Code execution and file creation**.
-2. Customize -> Skills -> **+** -> **Create skill** -> **Upload a skill**.
-3. Upload `aws-ai-practitioner-coach.zip`.
-4. Toggle the skill on.
-5. Recommended: create a Claude Project named `AWS AIF-C01 Study` and upload your own practice PDFs there.
-6. Test with: `Use my AWS AI Practitioner Coach skill. Start a 10-question diagnostic, one question at a time.`
+You do **not** need Python or coding.
 
-See `README.md` for the full setup and troubleshooting guide.
+## 1. Download the Skill ZIP
+
+Download [`downloads/aws-ai-practitioner-coach.zip`](downloads/aws-ai-practitioner-coach.zip) from this repository.
+
+## 2. Enable Claude Skills
+
+In Claude:
+
+1. Open **Settings**.
+2. Open **Capabilities**.
+3. Turn on **Code execution and file creation**.
+4. Go to **Customize → Skills**.
+
+## 3. Upload the Skill
+
+1. Click **+**.
+2. Choose **Create skill**.
+3. Choose **Upload a skill**.
+4. Upload `aws-ai-practitioner-coach.zip`.
+5. Make sure the Skill is enabled.
+
+## 4. Add the Three Practice Exams
+
+Create a Claude Project called `AWS AIF-C01 Study` and upload:
+
+- `practice-exams/AIF-C01-practice-exam-1.pdf`
+- `practice-exams/AIF-C01-practice-exam-2.pdf`
+- `practice-exams/AIF-C01-practice-exam-3.pdf`
+
+## 5. Start Practicing
+
+```text
+Use my AWS AI Practitioner Coach skill.
+Start a 10-question beginner diagnostic.
+Ask one question at a time.
+```
+
+Or:
+
+```text
+Use Practice Exam 1 and quiz me from it one question at a time.
+```
+
+See the main [README](README.md) for more practice prompts and explanations.
