@@ -1,0 +1,30 @@
+metadata:
+  exam: AWS Certified AI Practitioner (AIF-C01)
+  blueprint_version: '1.1'
+  blueprint_published: '2026-04-30'
+  taxonomy_version: 1.0.3
+  taxonomy_generated: '2026-09-03'
+  design: Domain -> Task -> Concept -> Signals -> Contrasts -> AWS services -> Question mappings
+  source_policy: Official AWS blueprint defines scope and weights. User-provided practice exams inform question
+    patterns and concept coverage.
+domain_files:
+- id: D1
+  name: Fundamentals of AI and ML
+  weight: 20
+  file: taxonomy/d1.yaml
+- id: D2
+  name: Fundamentals of GenAI
+  weight: 24
+  file: taxonomy/d2.yaml
+- id: D3
+  name: Applications of Foundation Models
+  weight: 28
+  file: taxonomy/d3.yaml
+- id: D4
+  name: Guidelines for Responsible AI
+  weight: 14
+  file: taxonomy/d4.yaml
+- id: D5
+  name: Security, Compliance, and Governance for AI Solutions
+  weight: 14
+  file: taxonomy/d5.yaml

@@ -1,0 +1,325 @@
+exam: AWS Certified AI Practitioner (AIF-C01)
+blueprint_version: '1.1'
+taxonomy_version: 1.0.3
+domain:
+  id: D1
+  name: Fundamentals of AI and ML
+  official_weight_percent: 20
+  task_statements:
+  - id: '1.1'
+    summary: Basic AI concepts and terminology
+  - id: '1.2'
+    summary: Practical AI use cases
+  - id: '1.3'
+    summary: AI/ML development lifecycle
+  concepts:
+  - id: ai-ml-genai-hierarchy
+    name: AI, ML, deep learning, and GenAI hierarchy
+    task: '1.1'
+    type: concept
+    definition: AI is the broad field; ML is a subset that learns from data; deep learning is a subset of ML; GenAI
+      creates new content from learned patterns.
+    question_signals:
+    - subset
+    - hierarchy
+    - AI vs ML
+    - deep learning vs ML
+    contrast_with:
+    - agentic-ai
+  - id: agentic-ai-basics
+    name: Agentic AI basics
+    task: '1.1'
+    type: concept
+    definition: Agentic AI systems use models plus tools, memory, planning, and orchestration to pursue goals and
+      take actions.
+    question_signals:
+    - agent
+    - autonomous
+    - tools
+    - orchestration
+    - feedback
+    contrast_with:
+    - traditional-ml
+  - id: supervised-learning
+    name: Supervised learning
+    task: '1.1'
+    type: learning-type
+    definition: Learns from labeled input-output examples for prediction or classification.
+    question_signals:
+    - labeled data
+    - classification
+    - regression
+    contrast_with:
+    - unsupervised-learning
+    - semi-supervised-learning
+  - id: unsupervised-learning
+    name: Unsupervised learning
+    task: '1.1'
+    type: learning-type
+    definition: Finds structure or patterns in unlabeled data, such as clusters or lower-dimensional representations.
+    question_signals:
+    - unlabeled data
+    - clustering
+    - dimensionality reduction
+    contrast_with:
+    - supervised-learning
+  - id: semi-supervised-learning
+    name: Semi-supervised learning
+    task: '1.1'
+    type: learning-type
+    definition: Combines a smaller labeled dataset with a larger unlabeled dataset.
+    question_signals:
+    - labeled and unlabeled
+    - fraud identification
+    - sentiment
+    contrast_with:
+    - supervised-learning
+    - unsupervised-learning
+  - id: reinforcement-learning
+    name: Reinforcement learning
+    task: '1.1'
+    type: learning-type
+    definition: An agent learns actions through interaction with an environment and reward or penalty feedback.
+    question_signals:
+    - trial and error
+    - reward
+    - robotics
+    - game playing
+    - dynamic environment
+    contrast_with:
+    - supervised-learning
+  - id: structured-vs-unstructured-data
+    name: Structured vs unstructured data
+    task: '1.1'
+    type: data
+    definition: Structured data follows a defined schema such as rows and columns; unstructured data includes free-form
+      text, images, audio, and video.
+    question_signals:
+    - rows and columns
+    - text images video
+    - predefined schema
+  - id: labeled-vs-unlabeled-data
+    name: Labeled vs unlabeled data
+    task: '1.1'
+    type: data
+    definition: Labeled data includes target annotations; unlabeled data has no target annotations.
+    question_signals:
+    - annotations
+    - labels
+    - unlabeled
+  - id: feature-selection-vs-extraction
+    name: Feature selection vs feature extraction
+    task: '1.1'
+    type: ml-concept
+    definition: Feature selection keeps a subset of original features; feature extraction transforms data into a
+      new feature space.
+    question_signals:
+    - PCA
+    - dimensionality
+    - relevant features
+    contrast_with:
+    - feature-engineering
+  - id: training-validation-test
+    name: Training, validation, and test sets
+    task: '1.3'
+    type: ml-lifecycle
+    definition: Training fits the model; validation supports tuning/model choice; test estimates final generalization
+      on unseen data.
+    question_signals:
+    - hyperparameter tuning
+    - generalization
+    - test set
+    - validation set
+  - id: overfitting-underfitting
+    name: Overfitting and underfitting
+    task: '1.1'
+    type: ml-concept
+    definition: Overfitting learns training noise and generalizes poorly; underfitting is too simple and performs
+      poorly even on training data.
+    question_signals:
+    - high variance
+    - high bias
+    - regularization
+    - cross-validation
+    - pruning
+    contrast_with:
+    - bias-variance
+  - id: bias-variance
+    name: Bias-variance trade-off
+    task: '1.1'
+    type: ml-concept
+    definition: High bias tends toward underfitting; high variance tends toward overfitting. Good generalization
+      balances both.
+    question_signals:
+    - high bias
+    - high variance
+    - trade-off
+    contrast_with:
+    - overfitting-underfitting
+  - id: traditional-ml-vs-deep-learning
+    name: Traditional ML vs deep learning
+    task: '1.1'
+    type: ml-concept
+    definition: Traditional ML often relies more on manual feature engineering; deep learning can learn representations
+      automatically using many-layer neural networks.
+    question_signals:
+    - manual features
+    - neural network
+    - many layers
+    - raw data
+  - id: cnn-vs-rnn
+    name: CNN vs RNN
+    task: '1.1'
+    type: ml-concept
+    definition: CNNs are commonly associated with spatial/image patterns; RNNs model sequences and temporal dependencies.
+    question_signals:
+    - image analysis
+    - sequence
+    - video
+    - temporal
+  - id: inference-modes
+    name: Inference deployment modes
+    task: '1.1'
+    type: deployment
+    definition: Choose real-time for low-latency persistent endpoints, serverless for intermittent traffic that
+      tolerates cold starts, asynchronous for long-running/large payload requests, and batch for offline bulk predictions.
+    question_signals:
+    - cold start
+    - low latency
+    - batch
+    - asynchronous
+    - persistent endpoint
+    aws_services:
+    - Amazon SageMaker AI
+  - id: computer-vision
+    name: Computer vision
+    task: '1.2'
+    type: use-case
+    definition: AI techniques for interpreting visual information in images and video.
+    question_signals:
+    - objects
+    - faces
+    - image
+    - video
+    - visual
+    aws_services:
+    - Amazon Rekognition
+  - id: nlp
+    name: Natural language processing
+    task: '1.2'
+    type: use-case
+    definition: AI techniques for analyzing and deriving meaning from human language.
+    question_signals:
+    - sentiment
+    - entities
+    - key phrases
+    - text insights
+    aws_services:
+    - Amazon Comprehend
+  - id: speech-recognition
+    name: Speech recognition
+    task: '1.2'
+    type: use-case
+    definition: Converts speech to text.
+    question_signals:
+    - speech to text
+    - transcription
+    aws_services:
+    - Amazon Transcribe
+  - id: text-to-speech
+    name: Text to speech
+    task: '1.2'
+    type: use-case
+    definition: Converts text into lifelike speech.
+    question_signals:
+    - text into speech
+    - voices
+    - audio course
+    aws_services:
+    - Amazon Polly
+  - id: machine-translation
+    name: Machine translation
+    task: '1.2'
+    type: use-case
+    definition: Translates text between languages.
+    question_signals:
+    - multilingual
+    - translate languages
+    aws_services:
+    - Amazon Translate
+  - id: recommendation-systems
+    name: Recommendation systems
+    task: '1.2'
+    type: use-case
+    definition: Generates personalized item or content recommendations based on user/item interactions.
+    question_signals:
+    - recommendations
+    - similar items
+    - personalization
+    aws_services:
+    - Amazon Personalize
+  - id: document-extraction
+    name: Document text and form extraction
+    task: '1.2'
+    type: use-case
+    definition: Extracts text, handwriting, forms, tables, and layout from documents.
+    question_signals:
+    - invoice
+    - receipt
+    - handwriting
+    - forms
+    - tables
+    - OCR
+    aws_services:
+    - Amazon Textract
+  - id: visual-analysis-service-selection
+    name: Rekognition vs Textract
+    task: '1.2'
+    type: decision
+    definition: Use Rekognition for general image/video visual analysis and text in natural scenes; use Textract
+      for document-centric extraction such as forms, tables, and handwriting.
+    question_signals:
+    - street sign
+    - receipt
+    - scanned document
+    - forms
+    contrast_with:
+    - document-extraction
+    - computer-vision
+    aws_services:
+    - Amazon Rekognition
+    - Amazon Textract
+  - id: ml-lifecycle
+    name: AI/ML lifecycle
+    task: '1.3'
+    type: lifecycle
+    definition: Typical stages include data preparation, model selection/training, evaluation, deployment, monitoring,
+      feedback, and retraining.
+    question_signals:
+    - pipeline
+    - deployment
+    - monitoring
+    - retraining
+    - production readiness
+  - id: ml-metrics
+    name: ML performance metrics
+    task: '1.3'
+    type: evaluation
+    definition: Metrics such as accuracy, precision, recall, and F1 quantify predictive performance for suitable
+      tasks.
+    question_signals:
+    - accuracy
+    - precision
+    - recall
+    - F1
+  - id: business-metrics
+    name: AI business metrics
+    task: '1.3'
+    type: evaluation
+    definition: Measures such as ROI, development cost, cost per user, customer feedback, efficiency, and conversion
+      connect model work to business value.
+    question_signals:
+    - ROI
+    - cost per user
+    - conversion
+    - customer feedback

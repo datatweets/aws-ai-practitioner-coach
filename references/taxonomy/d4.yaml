@@ -1,0 +1,111 @@
+exam: AWS Certified AI Practitioner (AIF-C01)
+blueprint_version: '1.1'
+taxonomy_version: 1.0.3
+domain:
+  id: D4
+  name: Guidelines for Responsible AI
+  official_weight_percent: 14
+  task_statements:
+  - id: '4.1'
+    summary: Responsible AI development
+  - id: '4.2'
+    summary: Transparency and explainability
+  concepts:
+  - id: responsible-ai-principles
+    name: Responsible AI principles
+    task: '4.1'
+    type: responsible-ai
+    definition: Responsible AI emphasizes fairness, inclusivity, robustness, safety, veracity, privacy, and appropriate human oversight.
+    question_signals: [responsible AI, fairness, robustness, safety, transparency]
+  - id: human-bias
+    name: Human bias
+    task: '4.1'
+    type: bias
+    definition: Bias introduced by human assumptions, choices, labeling, feature selection, or processes.
+    question_signals: [personal beliefs, feature selection, human judgment]
+  - id: algorithmic-bias
+    name: Algorithmic bias
+    task: '4.1'
+    type: bias
+    definition: Systematic model behavior that disadvantages or favors groups due to data, objectives, or algorithmic effects.
+    question_signals: [hiring algorithm, systematically prefers, group]
+  - id: hallucination
+    name: Hallucination
+    task: '4.1'
+    type: risk
+    definition: A generative model produces plausible-sounding but unsupported or incorrect information.
+    question_signals: [makes something up, plausible factual but incorrect]
+  - id: toxicity
+    name: Toxicity
+    task: '4.1'
+    type: risk
+    definition: Harmful, abusive, hateful, or otherwise unsafe generated content.
+    question_signals: [inferior, harmful content, toxic]
+  - id: sagemaker-clarify
+    name: Amazon SageMaker Clarify
+    task: '4.1'
+    type: aws-feature
+    definition: Helps detect bias and explain how features contribute to model predictions; also supports responsible AI evaluation use cases.
+    question_signals: [bias detection, feature contribution, model transparency]
+    aws_services: [Amazon SageMaker Clarify]
+  - id: bedrock-guardrails
+    name: Guardrails for Amazon Bedrock
+    task: '4.1'
+    type: aws-feature
+    definition: Configurable safeguards that filter undesirable content and can enforce responsible AI policies such as content and sensitive-information controls.
+    question_signals: [harmful content, PII, safeguards, filter]
+    aws_services: [Guardrails for Amazon Bedrock]
+  - id: model-cards
+    name: SageMaker Model Cards
+    task: '4.2'
+    type: governance-artifact
+    definition: Documents intended use, assumptions, risk, training/evaluation details, and other model governance information.
+    question_signals: [assumptions, intended use, risk rating, training details]
+    aws_services: [Amazon SageMaker Model Cards]
+  - id: ai-service-cards
+    name: AWS AI Service Cards
+    task: '4.2'
+    type: governance-artifact
+    definition: Provide transparency about intended use, limitations, design considerations, and responsible use of AWS AI services.
+    question_signals: [intended use, limitations, potential impacts, AWS AI service]
+  - id: model-dashboard
+    name: SageMaker Model Dashboard
+    task: '4.2'
+    type: aws-feature
+    definition: Centralized view for models and associated monitoring/governance information across a SageMaker account.
+    question_signals: [centralized view, hosted endpoints, aggregate model cards monitor]
+    aws_services: [Amazon SageMaker Model Dashboard]
+  - id: model-monitor
+    name: SageMaker Model Monitor
+    task: '4.1'
+    type: aws-feature
+    definition: Monitors production ML models and data for drift, quality issues, and related operational concerns.
+    question_signals: [production monitoring, drift, model quality]
+    aws_services: [Amazon SageMaker Model Monitor]
+  - id: a2i
+    name: Amazon Augmented AI (A2I)
+    task: '4.1'
+    type: aws-service
+    definition: Provides human review workflows for ML predictions and AI outputs.
+    question_signals: [human review, multiple reviewers, audit predictions]
+    contrast_with: [rlhf]
+    aws_services: [Amazon Augmented AI]
+  - id: ground-truth
+    name: SageMaker Ground Truth
+    task: '4.1'
+    type: aws-service
+    definition: Supports human data labeling and human-in-the-loop activities across the ML lifecycle.
+    question_signals: [labeling, human input, annotation, reward model]
+    aws_services: [Amazon SageMaker Ground Truth]
+  - id: interpretability-explainability
+    name: Interpretability vs explainability
+    task: '4.2'
+    type: responsible-ai
+    definition: Interpretability concerns understanding model mechanisms or behavior; explainability focuses on communicating understandable reasons for outputs to stakeholders.
+    question_signals: [internal mechanisms, understandable reasons, transparent model]
+  - id: transparent-model-benefits
+    name: Benefits of transparency and explainability
+    task: '4.2'
+    type: responsible-ai
+    definition: Transparency can improve debugging, optimization, stakeholder trust, auditability, and human-centered understanding.
+    question_signals: [debugging, trust, confidence, transparent]

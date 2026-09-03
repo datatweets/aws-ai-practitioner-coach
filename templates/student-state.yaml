@@ -1,0 +1,22 @@
+version: 1
+exam: AIF-C01
+student_name: ""
+started: ""
+sessions: 0
+answered_total: 0
+correct_total: 0
+confidence_counts:
+  sure: 0
+  unsure: 0
+  guess: 0
+domain_mastery:
+  D1: 0.50
+  D2: 0.50
+  D3: 0.50
+  D4: 0.50
+  D5: 0.50
+concept_mastery: {}
+misconceptions: []
+recent_mistakes: []
+flagged_for_review: []
+notes: []

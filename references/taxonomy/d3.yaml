@@ -1,0 +1,347 @@
+exam: AWS Certified AI Practitioner (AIF-C01)
+blueprint_version: '1.1'
+taxonomy_version: 1.0.3
+domain:
+  id: D3
+  name: Applications of Foundation Models
+  official_weight_percent: 28
+  task_statements:
+  - id: '3.1'
+    summary: FM application design
+  - id: '3.2'
+    summary: Prompt engineering
+  - id: '3.3'
+    summary: FM training and customization
+  - id: '3.4'
+    summary: FM evaluation
+  concepts:
+  - id: fm-selection
+    name: Foundation model selection
+    task: '3.1'
+    type: decision
+    definition: Choose an FM based on modality, cost, latency, model size/complexity, context and output limits,
+      language support, compliance, and customization needs.
+    question_signals:
+    - choose model
+    - latency
+    - cost
+    - modality
+    - model size
+    - multilingual
+  - id: temperature
+    name: Temperature
+    task: '3.1'
+    type: inference-parameter
+    definition: Higher temperature generally increases probability of lower-probability choices and output diversity;
+      lower temperature is more deterministic.
+    question_signals:
+    - creativity
+    - deterministic
+    - lower-probability
+    contrast_with:
+    - top-k
+    - top-p
+  - id: top-k
+    name: Top-K sampling
+    task: '3.1'
+    type: inference-parameter
+    definition: Restricts candidate next tokens to the K most likely options.
+    question_signals:
+    - number of most-likely candidates
+    - top k
+  - id: top-p
+    name: Top-P sampling
+    task: '3.1'
+    type: inference-parameter
+    definition: Uses the smallest candidate set whose cumulative probability reaches a probability threshold.
+    question_signals:
+    - percentage
+    - probability mass
+    - top p
+  - id: response-length
+    name: Response length / max output tokens
+    task: '3.1'
+    type: inference-parameter
+    definition: Sets an upper or model-specific length limit on generated output tokens.
+    question_signals:
+    - upper limit tokens
+    - maximum output tokens
+  - id: stop-sequence
+    name: Stop sequence
+    task: '3.1'
+    type: inference-parameter
+    definition: Stops generation when a specified sequence is produced.
+    question_signals:
+    - stop generation
+    - sequence of characters
+  - id: rag
+    name: Retrieval-Augmented Generation (RAG)
+    task: '3.1'
+    type: customization
+    definition: Retrieves relevant external knowledge at runtime and places it in model context without changing
+      model weights.
+    question_signals:
+    - current information
+    - private data
+    - knowledge base
+    - grounding
+    - without retraining
+    contrast_with:
+    - fine-tuning
+    - continued-pretraining
+  - id: bedrock-knowledge-bases
+    name: Knowledge Bases for Amazon Bedrock
+    task: '3.1'
+    type: aws-feature
+    definition: Managed RAG capability that handles ingestion, embeddings, retrieval, and prompt augmentation for
+      supported data sources and vector stores.
+    question_signals:
+    - end-to-end RAG
+    - private data
+    - knowledge bases
+    aws_services:
+    - Knowledge Bases for Amazon Bedrock
+  - id: vector-database
+    name: Vector databases for embeddings
+    task: '3.1'
+    type: data-store
+    definition: Stores embeddings and supports similarity search for RAG and semantic retrieval.
+    question_signals:
+    - vector store
+    - semantic search
+    - embeddings
+    aws_services:
+    - Amazon OpenSearch Service
+    - Amazon Aurora
+    - Amazon Neptune
+    - Amazon RDS for PostgreSQL
+  - id: bedrock-agent
+    name: Agents for Amazon Bedrock
+    task: '3.1'
+    type: aws-feature
+    definition: Agents orchestrate reasoning and actions using foundation models, tools/APIs, and data sources to
+      complete multi-step tasks.
+    question_signals:
+    - automate repetitive tasks
+    - orchestration
+    - action group
+    - business backend
+    aws_services:
+    - Agents for Amazon Bedrock
+  - id: action-group
+    name: Bedrock agent action groups
+    task: '3.1'
+    type: agentic-ai
+    definition: A defined collection of actions/functions an agent can call to perform tasks for a user.
+    question_signals:
+    - collection of tasks
+    - API schema
+    - Lambda
+  - id: prompt-engineering
+    name: Prompt engineering
+    task: '3.2'
+    type: application-design
+    definition: Designs instructions, context, examples, input data, and output format to steer a model for a task.
+    question_signals:
+    - instructions
+    - context
+    - input data
+    - output indicator
+    contrast_with:
+    - context-engineering
+  - id: zero-shot
+    name: Zero-shot prompting
+    task: '3.2'
+    type: prompt-technique
+    definition: Requests a task without examples.
+    question_signals:
+    - without examples
+    - zero shot
+  - id: few-shot
+    name: Few-shot prompting
+    task: '3.2'
+    type: prompt-technique
+    definition: Provides a small number of examples to demonstrate the desired behavior, format, or mapping.
+    question_signals:
+    - examples in prompt
+    - guide the model
+    - few shot
+  - id: chain-of-thought
+    name: Chain-of-thought / decomposition prompting
+    task: '3.2'
+    type: prompt-technique
+    definition: Encourages decomposition of complex problems into intermediate logical steps or subproblems.
+    question_signals:
+    - multi-step reasoning
+    - logical dependencies
+    - break down complex problem
+  - id: negative-prompting
+    name: Negative prompting
+    task: '3.2'
+    type: prompt-technique
+    definition: Specifies content or behavior the model should avoid.
+    question_signals:
+    - exclude
+    - avoid
+    - competitive brand names
+    - sensitive topics
+  - id: prompt-attack-exposure
+    name: Exposure
+    task: '3.2'
+    type: prompt-risk
+    definition: Sensitive information or secrets are revealed in model output.
+    question_signals:
+    - secret key
+    - session ID
+    - data leakage
+  - id: prompt-injection
+    name: Prompt injection
+    task: '3.2'
+    type: prompt-risk
+    definition: Untrusted input manipulates a model to override or alter intended instructions.
+    question_signals:
+    - manipulates input prompt
+    - ignore instructions
+    - malicious prompt
+  - id: hijacking
+    name: Prompt hijacking
+    task: '3.2'
+    type: prompt-risk
+    definition: A model or workflow is diverted from the intended task toward unintended or malicious behavior.
+    question_signals:
+    - diverts
+    - unintended task
+    - malicious purpose
+  - id: jailbreaking
+    name: Jailbreaking
+    task: '3.2'
+    type: prompt-risk
+    definition: Attempts to bypass safety restrictions to elicit prohibited behavior or content.
+    question_signals:
+    - bypass restrictions
+    - disable safeguards
+    - restricted functionality
+  - id: fine-tuning
+    name: Fine-tuning
+    task: '3.3'
+    type: customization
+    definition: Updates a copy of model weights using task- or domain-specific labeled examples to adapt behavior.
+    question_signals:
+    - labeled data
+    - custom model
+    - changes weights
+    contrast_with:
+    - rag
+    - continued-pretraining
+  - id: instruction-tuning
+    name: Instruction tuning
+    task: '3.3'
+    type: customization
+    definition: Fine-tunes a model with prompts/instructions and desired responses so it follows task instructions
+      better.
+    question_signals:
+    - specific prompts and desired outputs
+    - instruction dataset
+  - id: continued-pretraining
+    name: Continued pre-training
+    task: '3.3'
+    type: customization
+    definition: Continues pretraining on domain data, commonly unlabeled, to adapt the model to domain language
+      and knowledge.
+    question_signals:
+    - unlabeled domain data
+    - domain adaptation
+    contrast_with:
+    - fine-tuning
+    - rag
+  - id: rlhf
+    name: Reinforcement Learning from Human Feedback (RLHF)
+    task: '3.3'
+    type: customization
+    definition: Uses human preference feedback to optimize model behavior toward desired responses.
+    question_signals:
+    - human feedback
+    - reward model
+    - preferences
+    contrast_with:
+    - a2i
+  - id: model-distillation
+    name: Model distillation
+    task: '3.3'
+    type: customization
+    definition: Transfers task-relevant behavior from a larger teacher model to a smaller student model to reduce
+      latency and cost.
+    question_signals:
+    - teacher model
+    - student model
+    - smaller faster
+    - synthetic training data
+    aws_services:
+    - Amazon Bedrock model distillation
+  - id: human-evaluation
+    name: Human model evaluation
+    task: '3.4'
+    type: evaluation
+    definition: Human reviewers assess qualitative properties such as usefulness, preference, or user experience.
+    question_signals:
+    - qualitative
+    - human workforce
+    - user experience
+  - id: automatic-evaluation
+    name: Automatic model evaluation
+    task: '3.4'
+    type: evaluation
+    definition: Automated metrics provide repeatable quantitative measurements on defined datasets and tasks.
+    question_signals:
+    - automatic evaluation
+    - quantitative
+    - benchmark
+  - id: rouge
+    name: ROUGE
+    task: '3.4'
+    type: evaluation-metric
+    definition: Measures lexical overlap, often recall-oriented, between generated and reference summaries.
+    question_signals:
+    - summary
+    - matching sequences
+    - n-grams
+  - id: bleu
+    name: BLEU
+    task: '3.4'
+    type: evaluation-metric
+    definition: Measures n-gram precision-style overlap between candidate and reference text, historically common
+      in translation.
+    question_signals:
+    - translation
+    - n-gram
+    - reference text
+  - id: bertscore
+    name: BERTScore
+    task: '3.4'
+    type: evaluation-metric
+    definition: Compares contextual embeddings to measure semantic similarity between generated and reference text.
+    question_signals:
+    - word embeddings
+    - semantic meaning
+    - not exact matches
+  - id: llm-as-judge
+    name: LLM-as-a-judge
+    task: '3.4'
+    type: evaluation-method
+    definition: Uses a separate evaluator model to score or compare outputs according to defined criteria or rubrics.
+    question_signals:
+    - evaluator model
+    - rubric
+    - semantic correctness
+    - helpfulness
+  - id: bedrock-model-evaluation
+    name: Amazon Bedrock Model Evaluation
+    task: '3.4'
+    type: aws-feature
+    definition: Supports evaluating and comparing foundation models using automatic or human evaluation workflows.
+    question_signals:
+    - select appropriate LLM
+    - compare models
+    - evaluation job
+    aws_services:
+    - Amazon Bedrock Model Evaluation

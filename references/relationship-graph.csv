@@ -1,0 +1,92 @@
+subject,relation,object,strength,decision_note
+machine-learning,is-a,artificial-intelligence,strong,ML is a subset of AI.
+deep-learning,is-a,machine-learning,strong,Deep learning is a subset of ML.
+generative-ai,uses,foundation-model,strong,Many GenAI applications use foundation models.
+llm,is-a,foundation-model,strong,LLMs are language-focused foundation models.
+supervised-learning,requires-typically,labeled-data,strong,Supervised learning trains on labeled examples.
+unsupervised-learning,uses,unlabeled-data,strong,Unsupervised learning finds structure without target labels.
+semi-supervised-learning,combines,labeled-and-unlabeled-data,strong,Uses both labeled and unlabeled examples.
+reinforcement-learning,learns-from,rewards-and-penalties,strong,Learns via environment feedback.
+overfitting,associated-with,high-variance,strong,Memorizes noise and generalizes poorly.
+underfitting,associated-with,high-bias,strong,Model is too simple or insufficiently fit.
+feature-selection,keeps,original-features,strong,Selects a relevant subset.
+feature-extraction,creates,new-feature-space,strong,Transforms data into new representations.
+amazon-textract,best-for,documents-forms-tables-handwriting,strong,Document-centric extraction.
+amazon-rekognition,best-for,image-video-analysis,strong,"Objects, faces, labels, moderation, and scene text."
+amazon-comprehend,best-for,text-insights,strong,"Entities, sentiment, key phrases, classification, PII-related text tasks."
+amazon-transcribe,best-for,speech-to-text,strong,Transcription.
+amazon-polly,best-for,text-to-speech,strong,Speech synthesis.
+amazon-translate,best-for,machine-translation,strong,Multilingual text translation.
+amazon-personalize,best-for,recommendations,strong,Personalized recommendation use cases.
+amazon-q-developer,best-for,developer-and-aws-assistance,strong,Coding and AWS operational assistance.
+amazon-q-business,best-for,enterprise-data-assistant,strong,"Enterprise Q&A, summaries, and supported actions."
+amazon-q-in-connect,best-for,contact-center-assistance,strong,Helps customer service agents.
+amazon-bedrock,best-for,managed-foundation-model-apps,strong,Build GenAI apps with managed FM access.
+sagemaker-jumpstart,best-for,ml-hub-pretrained-models,strong,"Pretrained models, solutions, evaluation, and deployment."
+sagemaker-clarify,best-for,bias-and-explainability,strong,Bias detection and feature attribution.
+sagemaker-model-monitor,best-for,production-model-monitoring,strong,Monitor drift and model/data quality.
+sagemaker-model-cards,best-for,model-documentation,strong,"Assumptions, intended use, risk, and evaluation documentation."
+sagemaker-model-dashboard,best-for,centralized-model-view,strong,Central account view of models and associated status.
+sagemaker-ground-truth,best-for,human-labeling,strong,Human labeling and human-in-the-loop data work.
+amazon-a2i,best-for,human-review-of-predictions,strong,Human review workflows for model predictions.
+cloudtrail,best-for,api-audit-logging,strong,API calls and identity context.
+aws-config,best-for,resource-configuration-compliance,strong,Configuration tracking and rules.
+audit-manager,best-for,audit-evidence-collection,strong,Automates compliance evidence.
+trusted-advisor,best-for,optimization-recommendations,strong,"Guidance across cost, security, performance, resilience, quotas."
+amazon-macie,best-for,s3-sensitive-data-discovery,strong,Sensitive-data discovery in S3.
+rag,retrieves,external-knowledge,strong,Retrieves relevant data at runtime.
+rag,does-not-change,model-weights,strong,Grounding without retraining.
+rag,implemented-by,bedrock-knowledge-bases,strong,Managed RAG workflow in Bedrock.
+rag,uses,embeddings,strong,Embeddings support semantic retrieval.
+embeddings,stored-in,vector-database,strong,Vector stores enable similarity search.
+fine-tuning,changes,model-weights,strong,Adapts a customer-specific model copy.
+fine-tuning,uses-typically,labeled-examples,strong,Task-specific prompt/response or labeled data.
+continued-pretraining,uses-typically,unlabeled-domain-data,strong,Domain adaptation with unlabeled corpora.
+model-distillation,transfers-from,teacher-model,strong,Teacher generates or supplies high-quality behavior.
+model-distillation,transfers-to,student-model,strong,Student is smaller/faster/cost-efficient.
+model-distillation,optimizes,latency-and-cost,strong,Useful for high-volume narrow workloads.
+zero-shot,contains,no-examples,strong,Task instruction only.
+few-shot,contains,examples,strong,Demonstrates desired mapping or format.
+chain-of-thought,helps-with,multi-step-reasoning,strong,Useful for complex logical dependencies.
+negative-prompting,specifies,content-to-avoid,strong,Steers generation away from stated content.
+temperature,controls,output-randomness,strong,Higher values generally increase diversity.
+top-k,controls,candidate-count,strong,Number of likely next tokens considered.
+top-p,controls,cumulative-probability-pool,strong,Candidate pool by probability mass.
+response-length,controls,max-output-size,strong,Limits generated token count.
+rouge,measures,lexical-overlap,strong,Often used for summaries.
+bertscore,measures,semantic-similarity,strong,Uses contextual embeddings.
+llm-as-judge,uses,evaluator-model,strong,Scores outputs against a rubric.
+human-evaluation,captures,qualitative-user-experience,strong,Useful for subjective quality.
+automatic-evaluation,captures,repeatable-quantitative-metrics,strong,Useful for standardized comparison.
+mcp,standardizes,tool-and-resource-access,strong,Agents can discover and invoke external capabilities.
+strands-agents,supports,mcp,strong,Can connect to MCP tools.
+strands-agents,supports,multi-agent-patterns,strong,"Graphs, workflows, and agents-as-tools."
+kiro,supports,mcp-server-configuration,strong,Connects development workflows to external tools.
+kiro-specs,turns,idea-into-requirements-design-tasks,strong,Structured software planning.
+kiro-steering,stores,persistent-project-guidance,strong,"Architecture, conventions, and preferences."
+kiro-hooks,automates,event-driven-development-actions,strong,Shell command for deterministic operations; agent prompt for reasoning.
+agentcore-runtime,hosts,agent-code,strong,Serverless isolated execution and scaling.
+agentcore-memory,stores,session-and-cross-session-memory,strong,Short- and long-term memory capabilities.
+agentcore-gateway,exposes,tools-and-targets,strong,APIs/functions become governed agent tools.
+agentcore-identity,manages,credentials-and-oauth,strong,Access to third-party resources without hardcoded long-lived credentials.
+agentcore-policy,enforces,deterministic-tool-policies,strong,Policies are outside model reasoning and can enforce critical limits.
+agentcore-observability,emits,metrics-traces-spans,strong,"Investigate latency, errors, tool calls, execution paths."
+prompt-injection,attempts-to,override-intended-instructions,strong,Untrusted input manipulates model behavior.
+jailbreaking,attempts-to,bypass-safety-restrictions,strong,Targets safety guardrails.
+exposure,reveals,sensitive-information,strong,Secrets or sensitive context appears in output.
+bedrock-guardrails,mitigates,harmful-content,strong,Configurable content safeguards.
+bedrock-guardrails,can-control,sensitive-information,strong,PII and sensitive information controls where supported.
+iam,enforces,authentication-and-authorization,strong,Identity and access policies.
+encryption,protects,data-at-rest-and-in-transit,strong,Data confidentiality/integrity protection.
+aws,responsible-for,security-of-cloud,strong,Infrastructure responsibility.
+customer,responsible-for,security-in-cloud,strong,"Data, access, configurations, applications."
+data-residency,means,where-data-is-stored,strong,Geographic/physical location.
+data-retention,means,how-long-data-is-kept,strong,Lifecycle duration.
+data-lineage,tracks,data-origin-and-transformations,strong,Supports auditability.
+human-bias,introduced-by,human-decisions,strong,"Feature selection, labeling, assumptions."
+algorithmic-bias,manifested-as,systematic-unfair-outcomes,strong,Model behavior favors/disadvantages groups.
+interpretability,focuses-on,understanding-model-mechanisms,strong,How the model works.
+explainability,focuses-on,understandable-reasons-for-output,strong,Communicating model decisions to stakeholders.
+cloudtrail,confused-with,aws-config,strong,CloudTrail is API activity; Config is resource configuration state and rule compliance.
+aws-config,confused-with,audit-manager,strong,Config evaluates resource configurations; Audit Manager organizes audit evidence.
+aws-config,confused-with,trusted-advisor,strong,Config evaluates compliance state; Trusted Advisor gives optimization and best-practice recommendations.

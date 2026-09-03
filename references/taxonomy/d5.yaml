@@ -1,0 +1,133 @@
+exam: AWS Certified AI Practitioner (AIF-C01)
+blueprint_version: '1.1'
+taxonomy_version: 1.0.3
+domain:
+  id: D5
+  name: Security, Compliance, and Governance for AI Solutions
+  official_weight_percent: 14
+  task_statements:
+  - id: '5.1'
+    summary: Secure AI systems
+  - id: '5.2'
+    summary: Governance and compliance
+  concepts:
+  - id: iam-access-control
+    name: IAM and access control
+    task: '5.1'
+    type: security
+    definition: IAM identities, roles, policies, permissions, and conditions provide authentication and authorization controls for AWS resources.
+    question_signals: [granular access control, roles, policies, permissions]
+    aws_services: [AWS IAM]
+  - id: encryption
+    name: Encryption at rest and in transit
+    task: '5.1'
+    type: security
+    definition: Encryption protects data confidentiality and integrity while stored and while moving between systems.
+    question_signals: [at rest, in transit, confidentiality, integrity]
+  - id: shared-responsibility
+    name: AWS shared responsibility model
+    task: '5.1'
+    type: security
+    definition: AWS secures the infrastructure of the cloud; customers remain responsible for security in the cloud such as data, identities, configurations, and application controls.
+    question_signals: [security of the cloud, security in the cloud]
+  - id: threat-vulnerability
+    name: Threat detection vs vulnerability management
+    task: '5.1'
+    type: security
+    definition: Threat detection identifies active malicious activity; vulnerability management identifies and remediates weaknesses that could be exploited.
+    question_signals: [active threat, security weaknesses, real-time monitoring]
+  - id: data-access-integrity
+    name: Data access control vs data integrity
+    task: '5.1'
+    type: security
+    definition: Access control governs who may access data; integrity ensures data remains accurate, consistent, and unaltered.
+    question_signals: [authentication, authorization, unaltered, consistency]
+  - id: data-lineage
+    name: Data lineage
+    task: '5.1'
+    type: governance
+    definition: Tracks where data comes from and how it moves or transforms through systems, supporting auditability and compliance.
+    question_signals: [flow and transformation, origin, lineage]
+  - id: data-residency-retention
+    name: Data residency vs retention
+    task: '5.2'
+    type: governance
+    definition: Residency concerns where data is stored geographically; retention concerns how long data is kept.
+    question_signals: [physical location, how long, retention]
+  - id: data-logging
+    name: Data logging and audit trails
+    task: '5.2'
+    type: governance
+    definition: Captures access, actions, and changes over time for investigation, monitoring, and compliance.
+    question_signals: [API calls, user actions, audit trail, logging]
+  - id: cloudtrail
+    name: AWS CloudTrail
+    task: '5.2'
+    type: aws-service
+    definition: Records AWS API activity and identity context for auditing and operational/security investigation.
+    question_signals: [API calls, user actions, audit]
+    aws_services: [AWS CloudTrail]
+    contrast_with: [aws-config, audit-manager, trusted-advisor]
+  - id: aws-config
+    name: AWS Config
+    task: '5.2'
+    type: aws-service
+    definition: Continuously records and evaluates AWS resource configuration state for governance and compliance assessment.
+    question_signals: [resource configurations, compliance assessment]
+    aws_services: [AWS Config]
+    contrast_with: [cloudtrail, audit-manager, trusted-advisor]
+  - id: audit-manager
+    name: AWS Audit Manager
+    task: '5.2'
+    type: aws-service
+    definition: Automates evidence collection to support audits, risk assessments, and compliance programs.
+    question_signals: [evidence collection, compliance audit]
+    aws_services: [AWS Audit Manager]
+    contrast_with: [cloudtrail, aws-config, trusted-advisor]
+  - id: trusted-advisor
+    name: AWS Trusted Advisor
+    task: '5.2'
+    type: aws-service
+    definition: Provides recommendations across areas such as cost, performance, security, resilience/fault tolerance, and service quotas.
+    question_signals: [recommendations, cost savings, performance, security, fault tolerance]
+    aws_services: [AWS Trusted Advisor]
+    contrast_with: [cloudtrail, aws-config, audit-manager]
+  - id: macie
+    name: Amazon Macie
+    task: '5.1'
+    type: aws-service
+    definition: Discovers and helps protect sensitive data in Amazon S3, including automated sensitive-data discovery.
+    question_signals: [sensitive data, S3, automated discovery]
+    aws_services: [Amazon Macie]
+  - id: bedrock-data-protection
+    name: Amazon Bedrock data protection
+    task: '5.1'
+    type: security
+    definition: Bedrock supports protections such as encryption and customer data isolation; model-provider and training-use policies should be checked against current AWS documentation.
+    question_signals: [not shared with model providers, not used to improve base models, same region]
+    aws_services: [Amazon Bedrock]
+  - id: agentcore-policy
+    name: AgentCore Policy
+    task: '5.1'
+    type: agentcore-capability
+    definition: Provides deterministic policy enforcement at the agent tool boundary, useful when critical business rules must hold even if prompts are manipulated.
+    question_signals: [Cedar policy, refund limit, deterministic control]
+    aws_services: [Amazon Bedrock AgentCore Policy]
+  - id: agentcore-auth
+    name: AgentCore Gateway authorization
+    task: '5.1'
+    type: agentcore-capability
+    definition: Inbound authorization controls who can access the gateway; outbound authorization controls how the gateway accesses target resources.
+    question_signals: [inbound authorization, outbound authorization, gateway target]
+  - id: least-privilege-tools
+    name: Least privilege for agent tools
+    task: '5.1'
+    type: security
+    definition: Agent tools can create real-world side effects; code and permissions should be audited and restricted to the minimum necessary access.
+    question_signals: [third-party tool, host permissions, least privilege]
+  - id: genai-security-scoping
+    name: Generative AI Security Scoping Matrix
+    task: '5.2'
+    type: governance
+    definition: Governance framework that helps scope security disciplines and responsibilities for generative AI solutions.
+    question_signals: [risk management, security scoping matrix, governance framework]

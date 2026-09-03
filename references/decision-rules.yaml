@@ -1,0 +1,192 @@
+version: 1.0.3
+principle: Never map one keyword directly to one answer. Combine goal + data modality + freshness + action + constraint
+  + governance requirement.
+rules:
+- id: rag-vs-finetune
+  when:
+  - knowledge is external/private/current
+  - answers must use changing documents
+  - avoid changing model weights
+  prefer: rag / Knowledge Bases for Amazon Bedrock
+  avoid: fine-tuning as the primary solution
+  why: RAG injects retrieved knowledge at runtime; fine-tuning primarily adapts model behavior/weights.
+- id: finetune
+  when:
+  - labeled prompt-response examples
+  - need task/style/domain behavior adaptation
+  - a supported model should be privately customized
+  prefer: fine-tuning
+  avoid: RAG when the main need is behavior adaptation rather than fresh knowledge
+- id: continued-pretraining
+  when:
+  - large unlabeled domain corpus
+  - need deeper domain language/knowledge adaptation
+  prefer: continued pre-training
+  avoid: few-shot prompting as a substitute for model adaptation
+- id: distillation
+  when:
+  - large model quality is acceptable
+  - need lower latency/cost
+  - high-volume narrow workload
+  prefer: model distillation
+  avoid: raising output token limit
+- id: bedrock-vs-jumpstart
+  when:
+  - managed access to multiple FMs and GenAI app capabilities
+  prefer: Amazon Bedrock
+  contrast: SageMaker JumpStart is an ML hub with pretrained models/solutions and broader SageMaker workflows.
+- id: textract-vs-rekognition
+  when:
+  - scanned documents, invoices, receipts, forms, tables, handwriting
+  prefer: Amazon Textract
+  contrast: Use Rekognition for general image/video analysis and text in natural scenes.
+- id: comprehend
+  when:
+  - entities, sentiment, key phrases, text classification, PII in text
+  prefer: Amazon Comprehend
+- id: transcribe-polly-translate
+  when:
+  - speech -> text
+  prefer: Amazon Transcribe
+  alternatives:
+    text -> speech: Amazon Polly
+    language -> language: Amazon Translate
+- id: personalize
+  when:
+  - personalized item/content recommendations
+  - user/item interaction data
+  prefer: Amazon Personalize
+- id: q-family
+  when:
+  - developer coding/AWS operations
+  prefer: Amazon Q Developer
+  alternatives:
+    enterprise data assistant: Amazon Q Business
+    contact center agent assistance: Amazon Q in Connect
+- id: inference-mode
+  when:
+  - persistent low-latency one-at-a-time
+  prefer: real-time endpoint
+  alternatives:
+    intermittent/cold-start-tolerant: serverless inference
+    long-running/large payload: asynchronous inference
+    offline bulk: batch inference
+- id: temperature
+  when:
+  - more deterministic output
+  prefer: lower temperature
+  alternatives:
+    more diverse/creative output: higher temperature
+- id: top-k
+  when:
+  - question asks number of most likely candidates
+  prefer: Top K
+- id: top-p
+  when:
+  - question asks cumulative probability/percentage pool
+  prefer: Top P
+- id: max-output
+  when:
+  - upper limit on output tokens
+  prefer: response length / max output tokens
+- id: prompting
+  when:
+  - no examples
+  prefer: zero-shot
+  alternatives:
+    examples supplied: few-shot
+    multi-step decomposition: chain-of-thought/decomposition
+    content to avoid: negative prompting
+- id: evaluation-metrics
+  when:
+  - summary lexical overlap
+  prefer: ROUGE
+  alternatives:
+    semantic similarity using contextual embeddings: BERTScore
+    rubric-based semantic assessment: LLM-as-a-judge
+- id: human-vs-auto-eval
+  when:
+  - qualitative usefulness/user experience
+  prefer: human evaluation
+  alternatives:
+    repeatable quantitative metric: automatic evaluation
+- id: clarify-vs-modelcards
+  when:
+  - detect bias or feature contribution
+  prefer: SageMaker Clarify
+  alternatives:
+    document assumptions/intended use/risk: SageMaker Model Cards
+    centralized model view: SageMaker Model Dashboard
+    production drift/quality: SageMaker Model Monitor
+- id: a2i-vs-rlhf
+  when:
+  - human review of predictions/outputs
+  prefer: Amazon A2I
+  contrast: RLHF is a training/alignment technique that uses human preference feedback.
+- id: cloudtrail-config-audit
+  when:
+  - API calls/user actions/audit trail
+  prefer: AWS CloudTrail
+  alternatives:
+    resource configuration compliance: AWS Config
+    automated audit evidence: AWS Audit Manager
+    optimization recommendations: AWS Trusted Advisor
+  decisive_clues:
+    AWS CloudTrail: who did what through AWS APIs and when
+    AWS Config: what configuration a resource has or had and whether it complies with configuration rules
+    AWS Audit Manager: collect and organize evidence for audits and compliance assessments
+    AWS Trusted Advisor: recommendations for optimization and best practices
+  common_confusions:
+  - aws-config-vs-trusted-advisor
+  - cloudtrail-vs-aws-config
+  - aws-config-vs-audit-manager
+- id: agentcore-runtime
+  when:
+  - already have custom/open-source orchestration code
+  - need secure serverless hosting and isolation
+  prefer: AgentCore Runtime
+- id: agentcore-gateway
+  when:
+  - existing Lambda/REST APIs should become reusable tools
+  - standardized agent tool access
+  prefer: AgentCore Gateway
+- id: agentcore-identity
+  when:
+  - OAuth access to user third-party account
+  - avoid hardcoded long-lived credentials
+  prefer: AgentCore Identity
+- id: agentcore-policy
+  when:
+  - critical limit must be deterministic even under prompt manipulation
+  prefer: AgentCore Policy / Cedar policy at Gateway boundary
+- id: agentcore-memory
+  when:
+  - remember preference across sessions
+  prefer: long-term memory
+  alternatives:
+    turn-by-turn same session: short-term memory
+- id: mcp
+  when:
+  - standard tool discovery/invocation interface
+  prefer: MCP
+  notes: tools/list discovers tools; tools/call invokes a selected tool.
+- id: kiro
+  when:
+  - idea -> requirements -> technical design -> task list
+  prefer: Kiro Specs
+  alternatives:
+    persistent project conventions: Kiro steering
+    deterministic event command: Kiro hook Shell Command
+    external standardized tools: MCP server configuration
+- id: security-responsibility
+  when:
+  - physical/infrastructure security
+  prefer: AWS responsibility
+  alternatives:
+    data, identities, app configuration: customer responsibility
+- id: residency-retention
+  when:
+  - where data is stored
+  prefer: data residency
+  alternatives:
+    how long data is kept: data retention

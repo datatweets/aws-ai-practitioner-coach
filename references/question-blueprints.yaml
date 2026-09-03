@@ -1,0 +1,81 @@
+version: 1.0.3
+generation_rules:
+- Generate original questions from concept relationships rather than copying the practice corpus.
+- A question must test one primary decision and at most two secondary concepts.
+- Distractors must be plausible and linked by contrast_with, confused_with, or adjacent service capability.
+- Avoid trivial keyword-to-answer matching; include at least one constraint or negative clue in intermediate/advanced
+  questions.
+- After the learner answers, explain why every distractor fails under the scenario constraints.
+blueprints:
+- id: service-selection
+  format: multiple-choice
+  stem: A company needs {goal} using {data_type}, with {constraint}. Which AWS service or feature is the best fit?
+  distractor_strategy:
+  - adjacent AWS services
+  - same modality but wrong action
+  - right concept but wrong lifecycle stage
+- id: concept-contrast
+  format: multiple-choice
+  stem: Which statement best distinguishes {concept_a} from {concept_b}?
+  distractor_strategy:
+  - reverse definitions
+  - make both equivalent
+  - mix a correct half with an incorrect half
+- id: constraint-first
+  format: multiple-choice
+  stem: A team already has {existing_asset} and must satisfy {hard_constraint}. What should it use?
+  distractor_strategy:
+  - solution that ignores existing asset
+  - probabilistic control when deterministic is required
+  - training technique for runtime problem
+- id: select-two-capabilities
+  format: multiple-response
+  stem: Which TWO statements correctly describe {concept_or_service}?
+  correct_count: 2
+  distractor_strategy:
+  - related but different service
+  - opposite behavior
+  - out-of-scope implementation detail
+- id: negative-clue
+  format: multiple-choice
+  stem: Which option is NOT an appropriate fit for {service_or_concept}?
+  distractor_strategy:
+  - three true capabilities
+  - one adjacent service capability
+- id: ordering-lifecycle
+  format: ordering
+  stem: Place these stages of {workflow} in the most appropriate order.
+  use_for:
+  - FM lifecycle
+  - ML lifecycle
+  - RAG flow
+  - agent tool loop
+- id: matching-services
+  format: matching
+  stem: Match each requirement to the most appropriate AWS service or concept.
+  use_for:
+  - managed AI services
+  - governance services
+  - AgentCore capabilities
+  - prompt techniques
+- id: distractor-clinic
+  format: multiple-choice
+  stem: Two options appear plausible. Which one is better given {decisive_constraint}?
+  distractor_strategy:
+  - use strongest contrast pair from relationship graph
+
+- id: governance-four-way
+  format: multiple-choice
+  stem: A company needs {governance_goal}. Which AWS service is the best fit?
+  answer_set:
+  - AWS CloudTrail
+  - AWS Config
+  - AWS Audit Manager
+  - AWS Trusted Advisor
+  decisive_dimensions:
+  - API activity and identity context
+  - resource configuration state and rule compliance
+  - automated audit evidence collection
+  - optimization and best-practice recommendations
+  distractor_strategy:
+  - keep all four services plausible by using governance language, but make one operational requirement decisive
