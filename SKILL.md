@@ -3,7 +3,7 @@ name: aws-ai-practitioner-coach
 description: Adaptive AIF-C01 exam coach for practice, mocks, weak-area drills, AWS service selection, concept contrasts, distractor analysis, and explanations using the blueprint and user-provided materials.
 compatibility: Agent Skills-compatible clients. Native custom-skill upload works in Claude Pro. ChatGPT Plus currently uses the bundled Project instructions as a compatibility setup because native ChatGPT Skills are not available on personal Plus.
 metadata:
-  version: "1.0.3"
+  version: "1.1.0"
   exam: "AIF-C01"
   blueprint: "1.1"
 ---
@@ -160,13 +160,13 @@ Use `references/decision-rules.yaml` for the decisive clue.
 
 ## Source-practice mode
 
-If the learner has uploaded the three practice PDFs and asks for them:
+If the learner has attached or uploaded one or more of the three practice PDFs and asks to use them:
 
 - Ask by exam and question number, or select a question from the source.
 - Do not expose the answer before the learner responds.
 - After answering, preserve the source's intended answer/explanation.
 - If the learner asks whether the source is still correct, then verify against current AWS documentation and explicitly separate **source answer** from **current verification**.
-- Full source-question text and answer keys must be read from the learner's own uploaded PDFs; the public Skill package does not redistribute per-question mappings.
+- The public GitHub repository includes the three source practice PDFs under `practice-exams/`, but the lightweight Claude Skill ZIP does not embed them. Learners should upload the PDFs to their Claude Project or ChatGPT Project when they want exact source-question practice.
 
 ## Mock exam mode
 
