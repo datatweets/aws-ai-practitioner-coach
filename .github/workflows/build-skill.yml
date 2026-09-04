@@ -25,19 +25,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Use the AWS Certified AI Practitioner badge in README
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('README.md')
-          s = p.read_text(encoding='utf-8')
-          s = s.replace(
-              'assets/aws-certified-ai-practitioner-foundational.png',
-              'https://images.credly.com/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png'
-          )
-          p.write_text(s, encoding='utf-8')
-          PY
-
       - name: Build Claude Skill ZIP
         run: python scripts/package_skill.py
 
@@ -60,14 +47,14 @@ jobs:
           print('Claude Skill ZIP structure is valid')
           PY
 
-      - name: Commit generated student files
+      - name: Commit generated Claude download
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md downloads/aws-ai-practitioner-coach.zip dist/aws-ai-practitioner-coach.zip
+          git add downloads/aws-ai-practitioner-coach.zip
           if git diff --cached --quiet; then
-            echo "No generated changes"
+            echo "Claude ZIP is already current"
           else
-            git commit -m "Build fixed Claude Skill package"
+            git commit -m "Build Claude Skill package"
             git push
           fi
