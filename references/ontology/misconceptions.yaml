@@ -1,0 +1,68 @@
+misconceptions:
+  - id: rag-vs-fine-tuning
+    pair: [rag, fine-tuning]
+    diagnostic_rule: >-
+      If the learner chooses fine-tuning when the stem requires current or private
+      knowledge without weight changes, classify as knowledge-vs-behavior confusion.
+    repair:
+      explain: "RAG supplies knowledge at runtime; fine-tuning changes learned behavior/weights."
+      next_test: Reverse the scenario and ask for labeled behavior adaptation.
+
+  - id: fine-tuning-vs-continued-pretraining
+    pair: [fine-tuning, continued-pretraining]
+    diagnostic_rule: >-
+      If labeled examples are mistaken for unlabeled domain adaptation, classify as training-data-type confusion.
+    repair:
+      explain: "Fine-tuning usually relies on labeled examples; continued pre-training uses large unlabeled domain corpora."
+      next_test: Ask a terminology/domain-corpus scenario with no labels.
+
+  - id: distillation-vs-fine-tuning
+    pair: [model-distillation, fine-tuning]
+    diagnostic_rule: >-
+      If the goal is lower cost/latency with a smaller student model but the learner chooses fine-tuning,
+      classify as optimization-vs-adaptation confusion.
+    repair:
+      explain: "Distillation transfers capability to a smaller model; fine-tuning adapts task behavior."
+      next_test: Ask a teacher/student model scenario.
+
+  - id: config-vs-trusted-advisor
+    pair: [aws-config, aws-trusted-advisor]
+    diagnostic_rule: >-
+      If continuous resource configuration/compliance evaluation is confused with recommendations,
+      classify as compliance-state-vs-guidance confusion.
+    repair:
+      explain: "AWS Config evaluates configuration state against rules; Trusted Advisor recommends improvements."
+      next_test: Ask an optimization-recommendations scenario.
+
+  - id: cloudtrail-vs-config
+    pair: [aws-cloudtrail, aws-config]
+    diagnostic_rule: >-
+      If API activity is confused with resource state, classify as activity-vs-configuration confusion.
+    repair:
+      explain: "CloudTrail records activity; Config records/evaluates configuration state."
+      next_test: Ask who-called-what-and-when.
+
+  - id: audit-manager-vs-config
+    pair: [aws-audit-manager, aws-config]
+    diagnostic_rule: >-
+      If evidence collection for audits is confused with configuration compliance, classify as evidence-vs-state confusion.
+    repair:
+      explain: "Audit Manager gathers evidence for controls; Config evaluates resource configuration."
+      next_test: Ask for automated evidence collection.
+
+  - id: textract-vs-rekognition
+    pair: [amazon-textract, amazon-rekognition]
+    diagnostic_rule: >-
+      If document extraction is confused with visual object/image analysis, classify as document-vs-vision confusion.
+    repair:
+      explain: "Textract extracts text/forms/tables; Rekognition analyzes images/video."
+      next_test: Ask an invoice/table extraction scenario.
+
+  - id: prompt-vs-context-engineering
+    pair: [prompt-engineering, context-engineering]
+    diagnostic_rule: >-
+      If the learner confuses wording a prompt with designing the broader information/context supplied to a model,
+      classify as instruction-vs-context-system confusion.
+    repair:
+      explain: "Prompt engineering focuses on instructions; context engineering manages the broader context available to the model."
+      next_test: Ask a scenario involving memory, retrieved context, tools, and prompt content together.
