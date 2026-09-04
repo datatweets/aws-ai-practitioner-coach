@@ -1,0 +1,61 @@
+version: "1.0"
+exam: AIF-C01
+purpose: >-
+  Lightweight reasoning ontology for the AWS AI Practitioner Coach. It connects
+  question signals, requirements, concepts, AWS services/features, decision rules,
+  misconceptions, and mastery relationships so the tutor can reason beyond keyword matching.
+
+layers:
+  taxonomy:
+    source: ../aif-c01-taxonomy.yaml
+    role: Organizes domains, tasks, and concepts.
+  concept_relations:
+    source: ../relationship-graph.csv
+    role: Stores explicit concept and service relationships.
+  decision_rules:
+    source: ../decision-rules.yaml
+    role: Stores decisive clues and contrast rules.
+  question_signals:
+    source: question-signals.yaml
+    role: Maps natural-language clues to requirements and candidate concepts.
+  misconceptions:
+    source: misconceptions.yaml
+    role: Maps common wrong-answer confusions to targeted remediation.
+  mastery_relations:
+    source: mastery-relations.yaml
+    role: Defines how evidence on one concept or relationship should influence nearby practice.
+
+reasoning_chain:
+  - question_signal
+  - requirement_or_constraint
+  - candidate_concept
+  - relationship_or_decision_rule
+  - best_answer_or_service
+  - distractor_elimination
+  - misconception_if_wrong
+  - next_question_selection
+
+relation_types:
+  - is-a
+  - part-of
+  - uses
+  - retrieves
+  - changes
+  - does-not-change
+  - best-for
+  - not-best-for
+  - implemented-by
+  - confused-with
+  - prerequisite-of
+  - measured-by
+  - protected-by
+  - contrasts-with
+  - teacher-of
+  - student-of
+
+usage_rules:
+  - Never reduce a question to a single keyword-to-answer mapping.
+  - Require at least one requirement or constraint before choosing an answer.
+  - Prefer distractors connected by confused-with, contrasts-with, or sibling relations.
+  - After a wrong answer, test the same misconception from a different scenario before moving far away.
+  - Track mastery of both concepts and important relationships.
