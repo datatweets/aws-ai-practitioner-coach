@@ -175,6 +175,10 @@ Upload these from `references/`:
 - `taxonomy/d1.yaml` through `taxonomy/d5.yaml`
 - `relationship-graph.csv`
 - `decision-rules.yaml`
+- `ontology/ontology.yaml`
+- `ontology/question-signals.yaml`
+- `ontology/misconceptions.yaml`
+- `ontology/mastery-relations.yaml`
 - `question-blueprints.yaml`
 
 ### Step 4 — Upload the three practice exams
@@ -194,7 +198,7 @@ Track my weak topics.
 
 ## How the coach helps you reason
 
-The Skill uses a taxonomy, relationship graph, and decision rules to recognize what a question is really testing.
+The Skill uses a **taxonomy + reasoning ontology + relationship graph + decision rules** to recognize what a question is really testing. The ontology connects question clues to requirements, concepts, service relationships, likely misconceptions, and the next best question.
 
 | If the question says... | Think about... |
 |---|---|
