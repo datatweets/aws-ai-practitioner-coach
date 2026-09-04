@@ -1,0 +1,113 @@
+signals:
+  - id: current-private-changing-knowledge
+    phrases:
+      - latest policy
+      - current information
+      - private documents
+      - changes frequently
+      - no retraining
+      - do not change model weights
+    requirement: retrieve external knowledge at runtime without weight updates
+    candidates: [rag, bedrock-knowledge-bases]
+    reject_when_primary_goal: [fine-tuning, continued-pretraining, model-distillation]
+
+  - id: labeled-behavior-examples
+    phrases:
+      - labeled examples
+      - desired output
+      - exact response format
+      - teach the model a task
+      - adapt behavior
+    requirement: learn task-specific behavior from labeled examples
+    candidates: [fine-tuning]
+    contrasts: [rag, continued-pretraining]
+
+  - id: unlabeled-domain-corpus
+    phrases:
+      - millions of domain documents
+      - unlabeled text
+      - specialized terminology
+      - domain language
+    requirement: deepen domain knowledge using unlabeled data
+    candidates: [continued-pretraining]
+    contrasts: [fine-tuning, rag]
+
+  - id: smaller-cheaper-faster-model
+    phrases:
+      - lower inference cost
+      - reduce latency
+      - smaller model
+      - preserve teacher behavior
+      - high-volume narrow workload
+    requirement: transfer behavior from a stronger model to a smaller student model
+    candidates: [model-distillation]
+
+  - id: api-audit-activity
+    phrases:
+      - who called the api
+      - api activity
+      - who did what and when
+      - audit trail
+    requirement: record account and API activity
+    candidates: [aws-cloudtrail]
+    contrasts: [aws-config, aws-audit-manager]
+
+  - id: resource-configuration-compliance
+    phrases:
+      - configuration changes
+      - configuration compliance
+      - evaluate resources against rules
+      - resource configuration history
+    requirement: continuously assess resource configuration state against rules
+    candidates: [aws-config]
+    contrasts: [aws-cloudtrail, aws-audit-manager, aws-trusted-advisor]
+
+  - id: audit-evidence-collection
+    phrases:
+      - collect evidence
+      - audit controls
+      - compliance assessment
+      - organize evidence for auditors
+    requirement: automate evidence collection and map evidence to controls
+    candidates: [aws-audit-manager]
+    contrasts: [aws-config, aws-cloudtrail]
+
+  - id: best-practice-recommendations
+    phrases:
+      - recommendations
+      - optimization guidance
+      - cost performance security advice
+      - best practices
+    requirement: provide best-practice recommendations across AWS workloads
+    candidates: [aws-trusted-advisor]
+    contrasts: [aws-config]
+
+  - id: document-text-forms-tables
+    phrases:
+      - forms
+      - tables
+      - invoices
+      - handwriting
+      - extract text from documents
+    requirement: extract text and structured data from documents
+    candidates: [amazon-textract]
+    contrasts: [amazon-rekognition, amazon-comprehend]
+
+  - id: image-video-analysis
+    phrases:
+      - objects in images
+      - faces
+      - labels in images
+      - video analysis
+    requirement: analyze visual media
+    candidates: [amazon-rekognition]
+    contrasts: [amazon-textract]
+
+  - id: text-insights
+    phrases:
+      - sentiment
+      - entities in text
+      - key phrases
+      - language detection
+    requirement: derive NLP insights from text
+    candidates: [amazon-comprehend]
