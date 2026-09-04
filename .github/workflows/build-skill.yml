@@ -1,0 +1,70 @@
+name: Build Claude Skill
+
+on:
+  push:
+    paths:
+      - 'SKILL.md'
+      - 'references/**'
+      - 'templates/**'
+      - 'scripts/package_skill.py'
+      - '.github/workflows/build-skill.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Use the AWS Certified AI Practitioner badge in README
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('README.md')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace(
+              'assets/aws-certified-ai-practitioner-foundational.png',
+              'https://images.credly.com/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png'
+          )
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Build Claude Skill ZIP
+        run: python scripts/package_skill.py
+
+      - name: Verify Claude ZIP structure
+        run: |
+          python - <<'PY'
+          import zipfile, yaml
+          path = 'downloads/aws-ai-practitioner-coach.zip'
+          with zipfile.ZipFile(path) as z:
+              names = z.namelist()
+              expected = 'aws-ai-practitioner-coach/skill.md'
+              assert expected in names, f'Missing {expected}'
+              assert 'skill.md' not in names and 'SKILL.md' not in names, 'Loose root skill file found'
+              meta = yaml.safe_load(z.read(expected).decode().split('---', 2)[1])
+              assert meta['name'] == 'aws-ai-practitioner-coach'
+              assert len(meta['description']) <= 200
+          print('Claude Skill ZIP structure is valid')
+          PY
+
+      - name: Commit generated student files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md downloads/aws-ai-practitioner-coach.zip dist/aws-ai-practitioner-coach.zip
+          if git diff --cached --quiet; then
+            echo "No generated changes"
+          else
+            git commit -m "Build fixed Claude Skill package"
+            git push
+          fi
