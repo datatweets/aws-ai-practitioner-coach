@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.0 - 2026-09-04
+
+- Added a lightweight AIF-C01 reasoning ontology as a first-class Skill component.
+- Added question-signal mappings from natural-language clues to requirements and candidate concepts.
+- Added explicit misconception pairs and targeted remediation rules.
+- Added relationship-level mastery tracking and near-transfer retesting rules.
+- Updated the tutoring loop so distractors come from ontology neighbors and known confusion pairs.
+- Updated validation to require and inspect the ontology files and packaged ontology content.
+- The ontology explicitly prohibits naive keyword-to-answer shortcuts.
+
 ## 1.1.1 - 2026-09-04
 
 - Replaced the large README hero graphic with the AWS Certified AI Practitioner badge supplied for this project.
