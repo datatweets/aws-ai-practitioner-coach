@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/aws-certified-ai-practitioner-foundational.png" alt="AWS Certified AI Practitioner Foundational badge" width="250">
+  <img src="https://images.credly.com/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner Foundational badge" width="250">
 </p>
 
 <h1 align="center">AWS AI Practitioner Exam Coach — AIF-C01</h1>
