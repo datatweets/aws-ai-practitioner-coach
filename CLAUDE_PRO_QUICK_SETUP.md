@@ -2,9 +2,20 @@
 
 You do **not** need Python or coding.
 
-## 1. Download the Skill ZIP
+## 1. Download the fixed Skill ZIP
 
 Download [`downloads/aws-ai-practitioner-coach.zip`](downloads/aws-ai-practitioner-coach.zip) from this repository.
+
+If an older ZIP failed to upload, delete it and use this new package. It follows Claude's documented structure:
+
+```text
+aws-ai-practitioner-coach.zip
+└── aws-ai-practitioner-coach/
+    ├── skill.md
+    ├── references/
+    ├── templates/
+    └── scripts/
+```
 
 ## 2. Enable Claude Skills
 
