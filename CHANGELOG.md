@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.1 - 2026-09-04
+
+- Replaced the large README hero graphic with the AWS Certified AI Practitioner badge supplied for this project.
+- Fixed Claude Skill packaging to match Anthropic's documented ZIP structure: `aws-ai-practitioner-coach/skill.md`.
+- Simplified Skill YAML frontmatter to only the required `name` and `description` fields.
+- Updated the packaging script and validator so future builds keep the Claude-compatible structure.
+- Updated beginner setup instructions for students who previously saw a Claude Skill upload error.
+
 ## 1.1.0 - 2026-09-03
 
 ### Student experience redesign
