@@ -44,16 +44,19 @@ jobs:
       - name: Verify Claude ZIP structure
         run: |
           python - <<'PY'
-          import zipfile, yaml
+          import re, zipfile
           path = 'downloads/aws-ai-practitioner-coach.zip'
           with zipfile.ZipFile(path) as z:
               names = z.namelist()
               expected = 'aws-ai-practitioner-coach/skill.md'
               assert expected in names, f'Missing {expected}'
               assert 'skill.md' not in names and 'SKILL.md' not in names, 'Loose root skill file found'
-              meta = yaml.safe_load(z.read(expected).decode().split('---', 2)[1])
-              assert meta['name'] == 'aws-ai-practitioner-coach'
-              assert len(meta['description']) <= 200
+              skill = z.read(expected).decode('utf-8')
+              front = skill.split('---', 2)[1]
+              name_match = re.search(r'^name:\s*(.+)$', front, re.M)
+              desc_match = re.search(r'^description:\s*(.+)$', front, re.M)
+              assert name_match and name_match.group(1).strip() == 'aws-ai-practitioner-coach'
+              assert desc_match and len(desc_match.group(1).strip()) <= 200
           print('Claude Skill ZIP structure is valid')
           PY
 
