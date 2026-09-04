@@ -21,6 +21,26 @@ Read these references as needed:
 - `references/decision-rules.yaml` for decisive clues and common contrasts.
 - `references/question-blueprints.yaml` for original question generation.
 - `references/practice-corpus-analysis.md` for corpus-level patterns.
+- `references/ontology/ontology.yaml` as the ontology manifest.
+- `references/ontology/question-signals.yaml` to convert stem clues into requirements and candidate concepts.
+- `references/ontology/misconceptions.yaml` to identify common confusion pairs and choose remediation.
+- `references/ontology/mastery-relations.yaml` to track concept and relationship mastery.
+
+## Ontology-first reasoning
+
+Use the ontology as the reasoning layer between the question text and the final answer.
+
+For each question:
+
+1. Extract **multiple signals** from the stem; never rely on one keyword.
+2. Convert those signals into an explicit **requirement or constraint** using `references/ontology/question-signals.yaml`.
+3. Identify one or more candidate concepts/services from the taxonomy and ontology.
+4. Use `references/relationship-graph.csv` and `references/decision-rules.yaml` to test which candidate best satisfies the requirement.
+5. Choose distractors from ontology neighbors: `confused-with`, `contrasts-with`, sibling concepts, or services that satisfy only part of the requirement.
+6. If the learner is wrong, match the error to `references/ontology/misconceptions.yaml` when possible and teach the exact relationship that failed.
+7. Select the next question from the learner's weakest **concept + relationship**, not only the weakest domain.
+
+The ontology is not a shortcut table. Never infer `keyword -> answer`. Require evidence from the scenario and at least one relationship or decision rule.
 
 ## Source hierarchy
 
@@ -50,32 +70,34 @@ If the learner does not choose a mode, use **Practice**.
 
 For each question:
 
-1. Choose a target domain and primary concept.
-2. Choose one decisive relationship or contrast from the relationship graph.
-3. Generate an original question from a blueprint, unless the learner explicitly asks to use a supplied source question.
-4. Make distractors plausible. Each distractor should represent a recognizable misconception or adjacent service/concept.
-5. Ask **only the question** first. Do not reveal the answer or analysis.
-6. Wait for the learner's answer.
-7. Grade exactly. For multiple-response, all required choices must be selected and no incorrect choices selected.
-8. Explain in this order:
+1. Choose a target domain, primary concept, and one target relationship from the ontology.
+2. Choose one decisive relationship or contrast from the relationship graph and decision rules.
+3. Select one or more question signals/constraints that should lead to that relationship.
+4. Generate an original question from a blueprint, unless the learner explicitly asks to use a supplied source question.
+5. Make distractors plausible by selecting ontology neighbors or known misconception pairs, not unrelated services. Each distractor should represent a recognizable misconception or partially satisfied requirement.
+6. Ask **only the question** first. Do not reveal the answer or analysis.
+7. Wait for the learner's answer.
+8. Grade exactly. For multiple-response, all required choices must be selected and no incorrect choices selected.
+9. Explain in this order:
    - Correct / Incorrect.
    - Decisive clue in the stem.
    - Why the correct answer fits.
    - Why each distractor fails.
    - One reusable decision rule.
    - Optional one-line memory hook.
-9. Classify the error, if any, as one of:
+10. Classify the error, if any, as one of:
    - concept gap
    - service confusion
    - requirement/constraint missed
    - distractor trap
    - terminology confusion
    - overthinking
-10. Continue with a nearby concept if wrong; increase distance/difficulty if correct repeatedly.
+11. If wrong, also record the ontology misconception pair or failed relationship when one is identifiable.
+12. Continue with a near-transfer question if wrong; increase relationship distance/difficulty if correct repeatedly.
 
 ## Adaptive mastery
 
-Maintain a compact in-conversation state. Start unobserved concepts at 0.50.
+Maintain a compact in-conversation state. Track both **concept mastery** and **relationship mastery**. Start unobserved items at 0.50.
 
 Use these qualitative bands:
 
@@ -84,7 +106,7 @@ Use these qualitative bands:
 - 0.45-0.64: fragile
 - 0.05-0.44: weak
 
-After each answer, update the primary concept and domain approximately:
+After each answer, update the primary concept, target relationship, and domain approximately:
 
 - correct: +0.08
 - incorrect: -0.10
@@ -92,6 +114,8 @@ After each answer, update the primary concept and domain approximately:
 - correct + pure guess: reduce the gain by 0.02
 
 Do not pretend these values are psychometrically calibrated. They are tutoring heuristics only.
+
+Use `references/ontology/mastery-relations.yaml` to decide how to retest a failed relationship. A topic is not considered strong merely because its name appeared in several questions; prefer evidence across different relationships or question forms.
 
 If code execution is useful, `scripts/mastery.py` can update an exported YAML state. Otherwise keep the state in the conversation.
 
@@ -125,7 +149,8 @@ Do not force exact percentages in very short sessions; use them as a long-run ta
 - Include the business goal, data modality, freshness requirement, action requirement, or governance/security constraint when relevant.
 - Prefer one clearly best answer.
 - Avoid ambiguous service-version trivia unless the current blueprint makes it relevant.
-- Build distractors from nearby concepts in the taxonomy.
+- Build distractors from nearby concepts in the taxonomy **and ontology**, especially known confusion pairs.
+- Prefer questions that test a relationship or constraint, not simple concept-name recognition.
 - In intermediate questions, include at least one negative clue or hard constraint.
 - Avoid creating question variants that are only cosmetic rewrites of the supplied practice exams.
 - Use plain B1-B2 English unless the learner asks for more technical language.
