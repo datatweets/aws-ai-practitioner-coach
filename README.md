@@ -1,83 +1,78 @@
 <p align="center">
-  <img src="assets/aif-c01-certificate.svg" alt="AWS Certified AI Practitioner AIF-C01 Exam Coach by DataTweets" width="820">
+  <img src="assets/aws-certified-ai-practitioner-foundational.png" alt="AWS Certified AI Practitioner Foundational badge" width="250">
 </p>
 
-<h1 align="center">AWS AI Practitioner Exam Coach — AIF-C01 Practice for Claude & ChatGPT</h1>
+<h1 align="center">AWS AI Practitioner Exam Coach — AIF-C01</h1>
 
 <p align="center">
-  A beginner-friendly, adaptive <strong>AWS Certified AI Practitioner (AIF-C01)</strong> study coach with three full practice exams, concept relationships, weak-area drills, service-comparison practice, and step-by-step explanations.
-</p>
-
-<p align="center">
-  <a href="https://datatweets.com/">datatweets.com</a> ·
-  <a href="#-start-here--3-simple-steps">Start Here</a> ·
-  <a href="#-use-it-with-claude-pro">Claude Pro</a> ·
-  <a href="#-use-it-with-chatgpt-plus">ChatGPT Plus</a> ·
-  <a href="#-download-the-3-practice-exams">Practice Exams</a>
+  <strong>Practice AWS Certified AI Practitioner (AIF-C01) with Claude or ChatGPT.</strong><br>
+  Beginner-friendly questions, three practice exams, weak-area drills, service comparisons, and plain-English explanations.
 </p>
 
 <p align="center">
-  <img alt="AWS AIF-C01" src="https://img.shields.io/badge/AWS-AIF--C01-FF9900?style=for-the-badge">
-  <img alt="Beginner Friendly" src="https://img.shields.io/badge/Beginner-Friendly-22C55E?style=for-the-badge">
-  <img alt="Claude Pro" src="https://img.shields.io/badge/Claude-Pro-7C3AED?style=for-the-badge">
-  <img alt="ChatGPT Plus" src="https://img.shields.io/badge/ChatGPT-Plus-111827?style=for-the-badge">
+  <a href="https://datatweets.com/">DataTweets.com</a> ·
+  <a href="#start-here--3-simple-steps">Start Here</a> ·
+  <a href="#use-with-claude-pro">Claude Pro</a> ·
+  <a href="#use-with-chatgpt-plus">ChatGPT Plus</a> ·
+  <a href="#download-the-3-practice-exams">Practice Exams</a>
+</p>
+
+<p align="center">
+  <img alt="AWS AIF-C01" src="https://img.shields.io/badge/AWS-AIF--C01-FF9900?style=flat-square">
+  <img alt="Beginner Friendly" src="https://img.shields.io/badge/Beginner-Friendly-22C55E?style=flat-square">
+  <img alt="Claude Pro" src="https://img.shields.io/badge/Claude-Pro-7C3AED?style=flat-square">
+  <img alt="ChatGPT Plus" src="https://img.shields.io/badge/ChatGPT-Plus-111827?style=flat-square">
 </p>
 
 > [!IMPORTANT]
-> **You do not need Python, coding, Git, or a terminal to use this exam coach.**  
-> If you are a student, follow the simple steps below. The technical files at the bottom of this repository are only for maintainers.
+> **Students do not need Python, coding, Git, or a terminal.** Download the files, add them to Claude or ChatGPT, and start practicing.
 
 ---
 
 ## What is this?
 
-This repository helps you prepare for the **AWS Certified AI Practitioner AIF-C01 exam** by turning Claude Pro or ChatGPT Plus into a personal exam coach.
+This repository turns Claude or ChatGPT into an adaptive study coach for the **AWS Certified AI Practitioner (AIF-C01)** exam.
 
-Instead of teaching you to memorize `keyword → answer`, the coach teaches you how to think through AWS exam questions:
+Instead of memorizing `keyword → answer`, the coach teaches a reusable decision process:
 
-**question clue → requirement → AWS concept/service → correct answer → why the distractors are wrong**
+**question clue → requirement → concept/service → best answer → why the other choices are wrong**
 
 It can:
 
-- ask AWS AI Practitioner practice questions one at a time,
-- use the **three included 65-question practice exams**,
-- generate new original AIF-C01 questions,
+- ask AIF-C01 practice questions one at a time,
+- use the three included 65-question practice exams,
+- generate original practice questions,
 - explain every answer in plain English,
-- detect your weak topics,
-- drill confusing AWS services,
+- detect weak topics and repeat them intelligently,
+- drill confusing AWS services and concepts,
 - run mock exams,
-- practice multiple-choice and multiple-response questions,
-- focus on Amazon Bedrock, SageMaker, RAG, Responsible AI, security, governance, agents, MCP, AgentCore, Kiro, Strands, and more.
+- track misconception patterns such as **AWS Config vs Trusted Advisor** or **RAG vs fine-tuning**.
 
 ### Who is it for?
 
-This project is designed for:
-
-- complete AWS AI beginners,
-- students preparing for the AIF-C01 exam,
-- professionals who want a fast refresher,
-- learners who prefer conversational practice instead of reading hundreds of pages,
-- instructors who want an AI-assisted AWS AI Practitioner practice workflow.
+- Complete beginners to AWS AI
+- Students preparing for the AIF-C01 exam
+- Professionals who need a fast refresher
+- Trainers who want an AI-assisted practice workflow
+- Learners who prefer interactive questions over passive reading
 
 ---
 
-# Start Here — 3 Simple Steps
+## Start Here — 3 Simple Steps
 
 <table>
 <tr>
-<td align="center" width="33%"><img src="assets/step-download.svg" width="74"><br><strong>1. Download</strong><br>Download this repository or the Claude Skill ZIP.</td>
-<td align="center" width="33%"><img src="assets/step-chat.svg" width="74"><br><strong>2. Add to AI</strong><br>Use Claude Pro Skill upload or a ChatGPT Project.</td>
-<td align="center" width="33%"><img src="assets/step-practice.svg" width="74"><br><strong>3. Practice</strong><br>Ask for a diagnostic, topic drill, or mock exam.</td>
+<td align="center" width="33%"><img src="assets/step-download.svg" width="72"><br><strong>1. Download</strong><br>Get the Claude Skill ZIP or the repository files.</td>
+<td align="center" width="33%"><img src="assets/step-chat.svg" width="72"><br><strong>2. Add to AI</strong><br>Upload the Skill to Claude or create a ChatGPT Project.</td>
+<td align="center" width="33%"><img src="assets/step-practice.svg" width="72"><br><strong>3. Practice</strong><br>Start a diagnostic, domain drill, or mock exam.</td>
 </tr>
 </table>
 
-If you only want to start studying, you can ignore `scripts/`, `requirements-dev.txt`, `.github/`, and other developer files.
-
 ---
 
-# Download the 3 Practice Exams
+## Download the 3 Practice Exams
 
-Each practice exam contains **65 questions** and is designed for a **90-minute** practice session.
+Each practice exam contains **65 questions** and an answer/explanation section.
 
 | Practice exam | Questions | Download |
 |---|---:|---|
@@ -85,217 +80,180 @@ Each practice exam contains **65 questions** and is designed for a **90-minute**
 | Practice Exam 2 | 65 | [Open / download Exam 2](practice-exams/AIF-C01-practice-exam-2.pdf) |
 | Practice Exam 3 | 65 | [Open / download Exam 3](practice-exams/AIF-C01-practice-exam-3.pdf) |
 
-Together, the three files provide **195 AWS AI Practitioner practice questions** covering all five AIF-C01 domains.
+Together they provide **195 AWS AI Practitioner practice questions** across all five AIF-C01 domains.
 
-> You can study the PDFs normally, or upload them to Claude/ChatGPT and let the coach quiz you from them.
+You can study the PDFs normally or upload them to Claude/ChatGPT and ask the coach to quiz you from them.
 
 ---
 
-# Use It with Claude Pro
+## Use with Claude Pro
 
-Claude supports custom Skills, so this is the easiest setup.
+Claude supports custom Skills. This is the easiest setup.
 
-## Step 1 — Download the Skill ZIP
+### Step 1 — Download the fixed Claude Skill ZIP
 
-Click **[Download the Claude Skill ZIP](downloads/aws-ai-practitioner-coach.zip)**. No terminal or Python is needed.
+**[Download `aws-ai-practitioner-coach.zip`](downloads/aws-ai-practitioner-coach.zip)**
 
-## Step 2 — Enable Skills in Claude
+> [!NOTE]
+> If an older ZIP gave you an upload error, use the current ZIP above. It follows Anthropic's documented structure:
+>
+> ```text
+> aws-ai-practitioner-coach.zip
+> └── aws-ai-practitioner-coach/
+>     ├── skill.md
+>     ├── references/
+>     ├── templates/
+>     └── scripts/
+> ```
+>
+> The folder name matches the Skill name, and the Skill metadata uses only the required `name` and `description` fields.
 
-In Claude:
+### Step 2 — Enable Skills in Claude
 
 1. Open **Settings**.
 2. Open **Capabilities**.
 3. Turn on **Code execution and file creation**.
 4. Go to **Customize → Skills**.
 
-You do **not** need to write or run code yourself. Claude requires this capability internally for Skills.
+You do not need to write code. Claude uses this capability internally for Skills.
 
-## Step 3 — Upload the Skill
+### Step 3 — Upload the Skill
 
-1. Click **+** in **Customize → Skills**.
+1. Click **+**.
 2. Choose **Create skill**.
 3. Choose **Upload a skill**.
-4. Upload the `aws-ai-practitioner-coach.zip` file.
-5. Make sure the Skill is switched **on**.
+4. Upload `aws-ai-practitioner-coach.zip`.
+5. Make sure the Skill is enabled.
 
-## Step 4 — Add the Practice Exams
+### Step 4 — Add the practice exams
 
-For the best experience, create a Claude Project called:
+Create a Claude Project called:
 
 `AWS AIF-C01 Study`
 
-Upload these three files from the `practice-exams/` folder:
+Upload the three PDFs from `practice-exams/`.
 
-- `AIF-C01-practice-exam-1.pdf`
-- `AIF-C01-practice-exam-2.pdf`
-- `AIF-C01-practice-exam-3.pdf`
-
-## Step 5 — Start Studying
-
-Try this first:
+### Step 5 — Start practicing
 
 ```text
 Use my AWS AI Practitioner Coach skill.
-Start a 10-question diagnostic.
+Start a 10-question beginner diagnostic.
 Ask one question at a time and track my weak topics.
-```
-
-Or practice directly from a PDF:
-
-```text
-Use Practice Exam 1.
-Ask me question 1, but do not show the answer until I respond.
-```
-
-For more prompts, see [Practice ideas](#-practice-ideas-for-students).
-
----
-
-# Use It with ChatGPT Plus
-
-For personal ChatGPT Plus accounts, use a **Project**. Projects keep your instructions, files, and study chats together.
-
-## Step 1 — Create a Project
-
-1. Open ChatGPT.
-2. Click **New project** in the sidebar.
-3. Name it:
-
-`AWS AIF-C01 Coach`
-
-## Step 2 — Add the Coach Instructions
-
-Open:
-
-[`CHATGPT_PLUS_PROJECT_INSTRUCTIONS.md`](CHATGPT_PLUS_PROJECT_INSTRUCTIONS.md)
-
-Copy all of the text into your ChatGPT Project instructions.
-
-## Step 3 — Upload the Knowledge Files
-
-Upload these files from `references/`:
-
-- `official-blueprint-summary.md`
-- `aif-c01-taxonomy.yaml`
-- `taxonomy/d1.yaml`
-- `taxonomy/d2.yaml`
-- `taxonomy/d3.yaml`
-- `taxonomy/d4.yaml`
-- `taxonomy/d5.yaml`
-- `relationship-graph.csv`
-- `decision-rules.yaml`
-- `question-blueprints.yaml`
-
-## Step 4 — Upload the Practice Exams
-
-Upload:
-
-- `practice-exams/AIF-C01-practice-exam-1.pdf`
-- `practice-exams/AIF-C01-practice-exam-2.pdf`
-- `practice-exams/AIF-C01-practice-exam-3.pdf`
-
-ChatGPT Plus currently supports enough Project files for this complete setup.
-
-## Step 5 — Start Studying
-
-```text
-Start AWS AI Practitioner diagnostic mode.
-Give me 10 questions one at a time.
-After I answer, explain the correct answer and every distractor.
-Track my weak topics.
 ```
 
 Or:
 
 ```text
-Use Practice Exam 2.
-Quiz me from the PDF in random order.
-Do not reveal an answer before I respond.
+Use Practice Exam 1.
+Ask me question 1, but do not reveal the answer until I respond.
+```
+
+For a shorter setup guide, see [`CLAUDE_PRO_QUICK_SETUP.md`](CLAUDE_PRO_QUICK_SETUP.md).
+
+---
+
+## Use with ChatGPT Plus
+
+For a personal ChatGPT Plus account, use a **Project** to keep instructions, files, and study chats together.
+
+### Step 1 — Create a Project
+
+Create a project named:
+
+`AWS AIF-C01 Coach`
+
+### Step 2 — Add the coach instructions
+
+Open [`CHATGPT_PLUS_PROJECT_INSTRUCTIONS.md`](CHATGPT_PLUS_PROJECT_INSTRUCTIONS.md) and copy its contents into your Project instructions.
+
+### Step 3 — Upload the knowledge files
+
+Upload these from `references/`:
+
+- `official-blueprint-summary.md`
+- `aif-c01-taxonomy.yaml`
+- `taxonomy/d1.yaml` through `taxonomy/d5.yaml`
+- `relationship-graph.csv`
+- `decision-rules.yaml`
+- `question-blueprints.yaml`
+
+### Step 4 — Upload the three practice exams
+
+Upload the PDFs from `practice-exams/`.
+
+### Step 5 — Start practicing
+
+```text
+Start AWS AI Practitioner diagnostic mode.
+Give me 10 questions one at a time.
+After each answer, explain the decisive clue, the correct answer, and why every distractor is wrong.
+Track my weak topics.
 ```
 
 ---
 
-# How the Exam Coach Helps You Learn
+## How the coach helps you reason
 
-The coach uses a taxonomy and relationship graph so it can recognize what a question is **really testing**.
-
-For example:
+The Skill uses a taxonomy, relationship graph, and decision rules to recognize what a question is really testing.
 
 | If the question says... | Think about... |
 |---|---|
 | Current/private information without retraining | RAG / Knowledge Bases for Amazon Bedrock |
-| Labeled examples to teach a task or output style | Fine-tuning |
+| Labeled examples to teach behavior or output style | Fine-tuning |
 | Large unlabeled domain corpus | Continued pre-training |
-| Smaller, faster, cheaper model that keeps teacher behavior | Model distillation |
+| Smaller/faster/cheaper model that keeps teacher behavior | Model distillation |
 | API activity and who did what | AWS CloudTrail |
 | Resource configuration and compliance state | AWS Config |
 | Collect audit evidence | AWS Audit Manager |
 | Best-practice recommendations | AWS Trusted Advisor |
 
-This is why the coach is more useful than simple answer memorization.
+The goal is to learn **decision rules**, not just remember answer letters.
 
 ---
 
-# 🎯 Practice Ideas for Students
+## Practice ideas
 
 ### Beginner diagnostic
 
 ```text
-I am a beginner.
-Give me 15 mixed AIF-C01 questions one at a time.
-Use simple explanations after each answer.
+I am a beginner. Give me 15 mixed AIF-C01 questions one at a time and explain each answer simply.
 ```
 
 ### Weak-area practice
 
 ```text
-Review my mistakes and give me new questions only on my weak concepts.
+Review my mistakes and give me new questions only on my weakest concepts.
 ```
 
-### AWS service-selection practice
-
-```text
-Give me scenario questions where I must choose the correct AWS AI or ML service.
-```
-
-### Bedrock practice
+### Bedrock and Generative AI
 
 ```text
 Drill me on Amazon Bedrock, Knowledge Bases, Guardrails, Agents, RAG, and model customization.
 ```
 
-### Confusing concepts
+### Difficult contrasts
 
 ```text
 Give me difficult comparison questions on RAG vs fine-tuning vs continued pre-training vs distillation.
 ```
 
-### Governance practice
+### Governance services
 
 ```text
 Drill CloudTrail vs AWS Config vs Audit Manager vs Trusted Advisor until I stop confusing them.
 ```
 
-### Mock exam
+### Full mock
 
 ```text
-Run a 65-question AIF-C01-style mock exam.
-Do not give explanations until the end.
-```
-
-### Practice from the included PDFs
-
-```text
-Use Practice Exam 3.
-Ask questions one at a time in random order.
-Track which questions I get wrong.
+Run a 65-question AIF-C01-style mock exam. Do not give explanations until the end.
 ```
 
 ---
 
-# AIF-C01 Topics Covered
+## AIF-C01 topics covered
 
-The coach follows the current AWS Certified AI Practitioner blueprint and covers the five major areas:
+The coach covers the five AWS Certified AI Practitioner domains:
 
 1. **Fundamentals of AI and ML**
 2. **Fundamentals of Generative AI**
@@ -303,51 +261,27 @@ The coach follows the current AWS Certified AI Practitioner blueprint and covers
 4. **Guidelines for Responsible AI**
 5. **Security, Compliance, and Governance for AI Solutions**
 
-Important concepts include:
-
-- artificial intelligence, machine learning, deep learning,
-- supervised, unsupervised, semi-supervised, and reinforcement learning,
-- foundation models and large language models,
-- transformers, embeddings, tokens, and diffusion models,
-- Amazon Bedrock and Amazon SageMaker,
-- RAG, fine-tuning, continued pre-training, and model distillation,
-- prompt engineering and context engineering,
-- agents, tools, MCP, AgentCore, Kiro, and Strands Agents,
-- responsible AI, bias, explainability, hallucination, and toxicity,
-- Guardrails for Amazon Bedrock,
-- AWS IAM, CloudTrail, Config, Audit Manager, Trusted Advisor, Macie, and security concepts.
+Topics include AI/ML basics, supervised and unsupervised learning, foundation models, transformers, embeddings, Amazon Bedrock, SageMaker, RAG, fine-tuning, continued pre-training, distillation, prompting, responsible AI, Guardrails, IAM, CloudTrail, Config, Audit Manager, AgentCore, MCP, Kiro, Strands, and more.
 
 ---
 
-# Beginner FAQ
+## Beginner FAQ
 
 ### Do I need Python?
 
-**No.** Students do not need Python at all.
-
-### Do I need to install anything?
-
-No local software is required if you are using Claude or ChatGPT in the browser.
+**No.** Students do not need Python or any local coding setup.
 
 ### Do I need AWS experience?
 
-No. The coach can start at beginner level and increase the difficulty as you improve.
+No. The coach can begin at a beginner level and increase difficulty as you improve.
 
-### Are the three practice exams included?
+### Are the practice exams included?
 
-Yes. They are available in the [`practice-exams/`](practice-exams/) folder.
+Yes. See the [`practice-exams/`](practice-exams/) folder.
 
-### Can the AI explain why my answer is wrong?
+### Can the coach explain why I am wrong?
 
-Yes. That is one of the main purposes of the coach. It explains the decisive clue, the correct answer, and why the distractors do not fit.
-
-### Can I focus on only one exam domain?
-
-Yes. For example:
-
-```text
-Give me only Domain 3 questions until I reach strong mastery.
-```
+Yes. It explains the decisive clue, why the correct option fits, why the distractors fail, and a rule you can reuse on future questions.
 
 ### Is this an official AWS product?
 
@@ -355,85 +289,66 @@ No. This is an independent educational project for AWS AI Practitioner exam prep
 
 ---
 
-# Learn More with DataTweets
+## Learn more with DataTweets
 
-This project is created as part of the learning resources from **[DataTweets.com](https://datatweets.com/)**.
+This project is part of the learning resources from **[DataTweets.com](https://datatweets.com/)**.
 
-Visit DataTweets for practical tutorials, courses, and learning material across:
+DataTweets publishes practical learning material in:
 
 - Artificial Intelligence and Generative AI
-- Data Science
+- Data Science and Machine Learning
 - Data Engineering
-- Machine Learning
-- Cloud and AWS
+- AWS and cloud technologies
 - Analytics
 - SQL, Python, dbt, Terraform, and modern data tools
 
- **[Visit DATATWEETS](https://datatweets.com/)**
+**[Visit DataTweets.com](https://datatweets.com/)**
 
 ---
 
-# 🔎 AWS AI Practitioner Exam Prep Keywords
+## AWS AI Practitioner exam prep
 
-This repository is designed to help learners looking for:
-
-**AWS AI Practitioner practice exam**, **AIF-C01 practice questions**, **AWS Certified AI Practitioner study guide**, **AWS AI Practitioner mock exam**, **AWS AI Practitioner exam questions**, **Amazon Bedrock exam practice**, **AWS generative AI certification practice**, **Claude AWS exam skill**, **ChatGPT AWS AI Practitioner coach**, and **AIF-C01 exam preparation for beginners**.
+This repository is designed for learners searching for **AWS AI Practitioner practice exams**, **AIF-C01 practice questions**, **AWS Certified AI Practitioner study guides**, **AWS AI Practitioner mock exams**, **Amazon Bedrock exam practice**, **Claude AWS certification Skills**, **ChatGPT AWS AI Practitioner study projects**, and **AIF-C01 exam preparation for beginners**.
 
 ---
 
-# For Maintainers and Contributors Only
+## For maintainers and contributors only
 
-> Students can stop reading here. Everything below is optional developer tooling.
+> Students can stop reading here.
 
-The repository includes small Python utilities for maintaining the Skill package. They are **not required for studying**.
-
-The scripts are used to:
-
-- validate the Skill structure,
-- check taxonomy/reference files,
-- package the Claude Skill ZIP.
-
-Maintainer commands:
+The repository contains small Python utilities for validating and rebuilding the Skill package. They are not required for studying.
 
 ```bash
 python -m pip install -r requirements-dev.txt
-python scripts/validate_skill.py .
 python scripts/package_skill.py
+python scripts/validate_skill.py .
 ```
 
-GitHub Actions also validates the repository automatically after changes.
+The packager creates the ready-to-upload Claude ZIP in both `dist/` and `downloads/` using the required `aws-ai-practitioner-coach/skill.md` layout.
 
 ---
 
-## Repository Structure
+## Repository structure
 
 ```text
 aws-ai-practitioner-coach/
-├── README.md                         # Start here
-├── SKILL.md                          # Claude Skill behavior
-├── CLAUDE_PRO_QUICK_SETUP.md         # Short Claude guide
+├── README.md
+├── SKILL.md
+├── CLAUDE_PRO_QUICK_SETUP.md
 ├── CHATGPT_PLUS_PROJECT_INSTRUCTIONS.md
-├── assets/                           # Beginner-friendly SVG graphics
-├── downloads/                        # Ready-to-upload Claude Skill ZIP
-├── practice-exams/                   # 3 × 65-question practice PDFs
-├── references/                       # AIF-C01 taxonomy and reasoning rules
-├── templates/                        # Optional learning-state templates
-├── scripts/                          # Maintainer-only utilities
-└── .github/                          # Automated validation
+├── assets/
+├── downloads/
+├── practice-exams/
+├── references/
+├── templates/
+├── scripts/
+└── .github/
 ```
-
----
-
-## About the Practice Material
-
-The repository includes three practice exam PDFs supplied for this educational project. Each includes questions, an answer key, and explanations. The coach can use them as source material when a learner explicitly asks to practice from them.
-
-Generated questions should be clearly treated as **original practice questions**, not as official AWS certification exam questions.
 
 ---
 
 ## Disclaimer
 
-This is an independent educational resource and is **not affiliated with or endorsed by Amazon Web Services (AWS)**. AWS, Amazon Bedrock, Amazon SageMaker, and related names are trademarks of Amazon.com, Inc. or its affiliates.
+This is an independent educational resource and is **not affiliated with or endorsed by Amazon Web Services (AWS)**. AWS, Amazon Bedrock, Amazon SageMaker, AWS Certified, and related names and marks are trademarks or certification marks of Amazon.com, Inc. or its affiliates.
 
-The certificate-style graphic used in this repository is an original project graphic, not an official AWS certification badge.
+The AWS Certified AI Practitioner badge shown in this repository is used only to identify the certification targeted by this independent study project.
