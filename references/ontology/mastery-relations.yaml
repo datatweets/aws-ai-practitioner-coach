@@ -1,0 +1,47 @@
+mastery_model:
+  principle: Track both concept mastery and relationship mastery.
+
+  evidence_types:
+    - concept-recognition
+    - service-selection
+    - relationship-reasoning
+    - distractor-elimination
+    - constraint-detection
+    - misconception-repair
+
+  relationship_mastery_examples:
+    - id: rag-does-not-change-weights
+      subject: rag
+      relation: does-not-change
+      object: model-weights
+    - id: fine-tuning-changes-weights
+      subject: fine-tuning
+      relation: changes
+      object: model-weights
+    - id: config-vs-trusted-advisor
+      subject: aws-config
+      relation: contrasts-with
+      object: aws-trusted-advisor
+    - id: cloudtrail-vs-config
+      subject: aws-cloudtrail
+      relation: contrasts-with
+      object: aws-config
+
+  adaptation_rules:
+    - condition: wrong-and-confident
+      action: >-
+        Mark the explicit misconception pair as weak and ask a near-transfer question
+        testing the same relationship from a different scenario.
+    - condition: wrong-and-unsure
+      action: >-
+        Re-teach the decisive relation, then ask an easier contrast question.
+    - condition: correct-but-guess
+      action: >-
+        Record partial evidence only and retest the same relation later.
+    - condition: correct-repeatedly
+      action: >-
+        Move to a sibling or prerequisite relationship and increase scenario complexity.
+
+  coverage_rule: >-
+    A topic is not considered well covered merely because its concept name appeared.
+    Require evidence across at least two relation types or question forms where practical.
