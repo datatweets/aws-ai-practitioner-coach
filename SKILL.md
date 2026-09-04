@@ -1,11 +1,6 @@
 ---
 name: aws-ai-practitioner-coach
-description: Adaptive AIF-C01 exam coach for practice, mocks, weak-area drills, AWS service selection, concept contrasts, distractor analysis, and explanations using the blueprint and user-provided materials.
-compatibility: Agent Skills-compatible clients. Native custom-skill upload works in Claude Pro. ChatGPT Plus currently uses the bundled Project instructions as a compatibility setup because native ChatGPT Skills are not available on personal Plus.
-metadata:
-  version: "1.1.0"
-  exam: "AIF-C01"
-  blueprint: "1.1"
+description: Adaptive AIF-C01 coach for practice, mock exams, weak-area drills, AWS service selection, concept contrasts, distractor analysis, and plain-English explanations.
 ---
 
 # AWS AI Practitioner Coach
